@@ -1,0 +1,42 @@
+#!/usr/bin/env node
+
+"use strict";
+
+Error.stackTraceLimit = Infinity;
+
+process.on("unhandledRejection", reason => { throw reason; });
+
+require("log4-nodejs")();
+
+const meta = require("../package")
+    , argv = require("minimist")(process.argv.slice(2));
+
+const usage = `setup-package v${ meta.version } - Setup package
+
+Usage: setup-package package-name
+
+Options:
+
+    --version, -v  Display version
+    --help,    -h  Show this message
+
+`;
+
+if (argv.h || argv.help) {
+	process.stdout.write(usage);
+	return;
+}
+
+if (argv.v || argv.version) {
+	process.stdout.write(`${ meta.version }\n`);
+	return;
+}
+
+const [packageName] = argv._;
+
+if (!packageName) {
+	process.stderr.write(`Provide package name to setup\n\n${ usage }`);
+	process.exit(1);
+}
+
+require("..")(process.cwd(), packageName);
