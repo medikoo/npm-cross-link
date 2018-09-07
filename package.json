@@ -1,0 +1,25 @@
+{
+  "private": true,
+  "name": "modules-installer",
+  "version": "0.0.0",
+  "author": "Mariusz Nowak <medyk@medikoo.com> (http://www.medikoo.com/)",
+  "dependencies": {
+    "es5-ext": "^0.10.46",
+    "source-map-support": "^0.5.9"
+  },
+  "devDependencies": {
+    "eslint": "^5.5",
+    "eslint-config-medikoo": "^1.41"
+  },
+  "eslintConfig": {
+    "extends": "medikoo",
+    "root": true,
+    "env": {
+      "node": true
+    }
+  },
+  "scripts": {
+    "lint": "eslint --ignore-path=.gitignore ."
+  },
+  "license": "ISC"
+}
