@@ -3,12 +3,14 @@
   "version": "1.0.0",
   "author": "Mariusz Nowak <medyk@medikoo.com> (http://www.medikoo.com/)",
   "dependencies": {
+    "child-process-es6-promise": "^1.2",
     "deferred": "^0.7.9",
     "fs2": "^0.2.8",
     "log4": "^3.0.1",
     "log4-nodejs": "^2.3.1",
     "memoizee": "^0.4.14",
     "minimist": "^1.2",
+    "split": "^1.0.1",
     "@octokit/rest": "^15.11.1"
   },
   "devDependencies": {
