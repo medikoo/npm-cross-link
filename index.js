@@ -1,6 +1,8 @@
 "use strict";
 
-const { resolve }  = require("path")
-    , setupPackage = require("./lib/setup-package");
+const ensureString        = require("es5-ext/object/validate-stringifiable-value")
+    , ensureConfiguration = require("./lib/ensure-configuration")
+    , installPackage      = require("./lib/install-package");
 
-module.exports = (packagesPath, packageName) => setupPackage(resolve(packagesPath), packageName);
+module.exports = (packageName, configuration) =>
+	installPackage(ensureString(packageName), ensureConfiguration(configuration));
