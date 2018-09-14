@@ -35,8 +35,22 @@ if (argv.v || argv.version) {
 const [packageName] = argv._;
 
 if (!packageName) {
-	process.stderr.write(`Provide package name to setup\n\n${ usage }`);
+	process.stderr.write(`Provide package name to install\n\n${ usage }`);
 	process.exit(1);
 }
 
-require("..")(process.cwd(), packageName);
+const clc                      = require("cli-color")
+    , DevPackageInstallError   = require("../lib/dev-package-install-error")
+    , installPackage           = require("../lib/install-package")
+    , resolveUserConfiguration = require("../lib/resolve-user-configuration");
+
+resolveUserConfiguration()
+	.then(configuration => installPackage(packageName, configuration))
+	.catch(error => {
+		if (error instanceof DevPackageInstallError) {
+			process.stdout.write(`\n${ clc.red(error.message) }\n`);
+			process.exit(1);
+			return;
+		}
+		throw error;
+	});

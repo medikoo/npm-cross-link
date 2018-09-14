@@ -8,15 +8,15 @@
   "dependencies": {
     "child-process-es6-promise": "^1.2",
     "cjs-module": "^1.4",
-    "deferred": "^0.7.9",
+    "cli-color": "^1.3",
+    "xdeferred": "^0.7.9",
     "es5-ext": "^0.10.46",
     "fs2": "^0.2.10",
     "log4": "^3.0.1",
     "log4-nodejs": "^2.3.1",
     "memoizee": "^0.4.14",
     "minimist": "^1.2",
-    "split": "^1.0.1",
-    "@octokit/rest": "^15.11.1"
+    "split": "^1.0.1"
   },
   "devDependencies": {
     "eslint": "^5.5",
@@ -30,7 +30,7 @@
     },
     "overrides": [
       {
-        "files": "lib/setup-package.js",
+        "files": "lib/install-package.js",
         "rules": {
           "no-await-in-loop": "off"
         }
