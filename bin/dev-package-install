@@ -11,9 +11,9 @@ require("log4-nodejs")();
 const meta = require("../package")
     , argv = require("minimist")(process.argv.slice(2));
 
-const usage = `setup-package v${ meta.version } - Setup package
+const usage = `dev-package-install v${ meta.version } - Install dev package
 
-Usage: setup-package package-name
+Usage: dev-package-install package-name
 
 Options:
 
