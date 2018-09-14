@@ -4,7 +4,9 @@
   "author": "Mariusz Nowak <medyk@medikoo.com> (http://www.medikoo.com/)",
   "dependencies": {
     "child-process-es6-promise": "^1.2",
+    "cjs-module": "^1.4",
     "deferred": "^0.7.9",
+    "es5-ext": "^0.10.46",
     "fs2": "^0.2.10",
     "log4": "^3.0.1",
     "log4-nodejs": "^2.3.1",
