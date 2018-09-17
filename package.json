@@ -1,5 +1,5 @@
 {
-  "name": "dev-package-install",
+  "name": "dev-package",
   "version": "1.0.0",
   "author": "Mariusz Nowak <medyk@medikoo.com> (http://www.medikoo.com/)",
   "bin": {

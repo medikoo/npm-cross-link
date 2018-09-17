@@ -1,4 +1,4 @@
-# dev-package-install
+# dev-package
 
 ### Use case
 
