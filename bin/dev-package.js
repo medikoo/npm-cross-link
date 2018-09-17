@@ -53,14 +53,14 @@ if (!packageName) {
 }
 
 const clc                      = require("cli-color")
-    , DevPackageInstallError   = require("../lib/dev-package-install-error")
+    , DevPackageError          = require("../lib/dev-package-error")
     , installPackage           = require("../lib/install-package")
     , resolveUserConfiguration = require("../lib/resolve-user-configuration");
 
 resolveUserConfiguration()
 	.then(configuration => installPackage(packageName, configuration))
 	.catch(error => {
-		if (error instanceof DevPackageInstallError) {
+		if (error instanceof DevPackageError) {
 			process.stdout.write(`\n${ clc.red(error.message) }\n`);
 			process.exit(1);
 			return;
