@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "author": "Mariusz Nowak <medyk@medikoo.com> (http://www.medikoo.com/)",
   "bin": {
-    "dev-package-install": "./bin/dev-package-install.js"
+    "dev-package": "./bin/dev-package.js"
   },
   "dependencies": {
     "child-process-es6-promise": "^1.2",
