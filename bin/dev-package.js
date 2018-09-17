@@ -13,7 +13,10 @@ const meta = require("../package")
 
 const usage = `dev-package v${ meta.version } - Install dev package
 
-Usage: dev-package <command> [options] <entries...>
+Usage: dev-package <command>
+
+where <command> is one of:
+    install
 
 Options:
 
