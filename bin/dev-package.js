@@ -11,9 +11,9 @@ require("log4-nodejs")();
 const meta = require("../package")
     , argv = require("minimist")(process.argv.slice(2));
 
-const usage = `dev-package-install v${ meta.version } - Install dev package
+const usage = `dev-package v${ meta.version } - Install dev package
 
-Usage: dev-package-install package-name
+Usage: dev-package <command> [options] <entries...>
 
 Options:
 
@@ -32,7 +32,17 @@ if (argv.v || argv.version) {
 	return;
 }
 
-const [packageName] = argv._;
+const [command, packageName] = argv._;
+
+if (!command) {
+	process.stderr.write(`Provide command name to install\n\n${ usage }`);
+	process.exit(1);
+}
+
+if (command !== "install") {
+	process.stderr.write(`${ command } is not a suppported command\n\n${ usage }`);
+	process.exit(1);
+}
 
 if (!packageName) {
 	process.stderr.write(`Provide package name to install\n\n${ usage }`);
