@@ -10,6 +10,7 @@
     "cjs-module": "^1.4",
     "cli-color": "^1.3",
     "es5-ext": "^0.10.46",
+    "event-emitter": "^0.3.5",
     "fs2": "^0.2.10",
     "log4": "^3.0.1",
     "log4-nodejs": "^2.3.1",
