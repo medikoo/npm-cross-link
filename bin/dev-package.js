@@ -62,42 +62,28 @@ const log                      = require("log4").get("dev-package")
 
 const installsInProgress = new Set();
 
-let progressLines = ["resolving user configuration"];
-const frames = ["⠋", "⠙", "⠹", "⠸", "⠼", "⠴", "⠦", "⠧", "⠇", "⠏"];
-let frameIndex = 0;
-let frame = frames[frameIndex++ % frames.length];
+cliFooter.shouldAddProgressAnimationPrefix = true;
+cliFooter.updateProgress(["resolving user configuration"]);
 
 const updateProgress = () => {
 	cliFooter.updateProgress(
-		progressLines.map(progressLine => `${ frame } ${ progressLine }`).join("\n")
+		Array.from(installsInProgress, inProgressPackageName =>
+			format("installing %s", inProgressPackageName)
+		)
 	);
-};
-const interval = setInterval(() => {
-	frame = frames[frameIndex++ % frames.length];
-	updateProgress();
-}, 80);
-const updateInstallProgressLines = () => {
-	progressLines = Array.from(installsInProgress, inProgressPackageName =>
-		format("installing %s", inProgressPackageName)
-	);
-	updateProgress();
 };
 
 installPackage.on("start", startedPackageName => {
 	installsInProgress.add(startedPackageName);
-	updateInstallProgressLines();
+	updateProgress();
 });
 installPackage.on("end", endedPackageName => {
 	installsInProgress.delete(endedPackageName);
 	log.notice("installed %s", endedPackageName);
-	updateInstallProgressLines();
+	updateProgress();
 });
 resolveUserConfiguration()
 	.then(configuration => installPackage(packageName, configuration))
-	.finally(() => {
-		clearInterval(interval);
-		updateProgress();
-	})
 	.catch(error => {
 		if (error instanceof DevPackageError) {
 			process.stdout.write(`\n${ clc.red(error.message) }\n`);
