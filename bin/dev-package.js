@@ -42,7 +42,9 @@ if (!command) {
 	process.exit(1);
 }
 
-if (command !== "install") {
+const supportedCommands = new Set(["install", "update"]);
+
+if (!supportedCommands.has(command)) {
 	process.stderr.write(`${ command } is not a suppported command\n\n${ usage }`);
 	process.exit(1);
 }
