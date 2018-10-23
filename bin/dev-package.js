@@ -60,26 +60,32 @@ const log                      = require("log4").get("dev-package")
     , installPackage           = require("../lib/install-package")
     , resolveUserConfiguration = require("../lib/resolve-user-configuration");
 
-const installsInProgress = new Set();
+const installsInProgress = new Map();
+
+const logWordForms = {
+	present: { install: "installing", update: "updating" },
+	past: { install: "installed", update: "updated" }
+};
 
 cliFooter.shouldAddProgressAnimationPrefix = true;
 cliFooter.updateProgress(["resolving user configuration"]);
 
 const updateProgress = () => {
 	cliFooter.updateProgress(
-		Array.from(installsInProgress, inProgressPackageName =>
-			format("installing %s", inProgressPackageName)
+		Array.from(installsInProgress, ([inProgressPackageName, { type }]) =>
+			format(`${ logWordForms.present[type] } %s`, inProgressPackageName)
 		)
 	);
 };
 
-installPackage.on("start", ({ packageName: startedPackageName }) => {
-	installsInProgress.add(startedPackageName);
+installPackage.on("start", event => {
+	installsInProgress.set(event.packageName, event);
 	updateProgress();
 });
 installPackage.on("end", ({ packageName: endedPackageName }) => {
+	const { type } = installsInProgress.get(endedPackageName);
 	installsInProgress.delete(endedPackageName);
-	log.notice("installed %s", endedPackageName);
+	log.notice(`${ logWordForms.past[type] } %s`, endedPackageName);
 	updateProgress();
 });
 resolveUserConfiguration()
