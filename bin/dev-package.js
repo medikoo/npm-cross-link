@@ -73,11 +73,11 @@ const updateProgress = () => {
 	);
 };
 
-installPackage.on("start", startedPackageName => {
+installPackage.on("start", ({ packageName: startedPackageName }) => {
 	installsInProgress.add(startedPackageName);
 	updateProgress();
 });
-installPackage.on("end", endedPackageName => {
+installPackage.on("end", ({ packageName: endedPackageName }) => {
 	installsInProgress.delete(endedPackageName);
 	log.notice("installed %s", endedPackageName);
 	updateProgress();
