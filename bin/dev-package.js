@@ -16,7 +16,7 @@ const usage = `dev-package v${ meta.version } - Install dev package
 Usage: dev-package <command>
 
 where <command> is one of:
-    install
+    install, update
 
 Options:
 
