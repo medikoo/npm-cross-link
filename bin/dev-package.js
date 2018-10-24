@@ -9,7 +9,7 @@ process.on("unhandledRejection", reason => { throw reason; });
 require("log4-nodejs")({ defaultNamespace: "dev-package" });
 
 const meta = require("../package")
-    , argv = require("minimist")(process.argv.slice(2));
+    , argv = require("minimist")(process.argv.slice(2), { boolean: "skip-nested-git-update" });
 
 const usage = `dev-package v${ meta.version } - Install dev package
 
@@ -20,8 +20,9 @@ where <command> is one of:
 
 Options:
 
-    --version, -v  Display version
-    --help,    -h  Show this message
+    --skip-nested-git-update   Do not run 'git pull' on dependencies
+    --version,             -v  Display version
+    --help,                -h  Show this message
 
 `;
 
@@ -91,7 +92,11 @@ installPackage.on("end", ({ packageName: endedPackageName }) => {
 	updateProgress();
 });
 resolveUserConfiguration()
-	.then(configuration => installPackage(packageName, configuration))
+	.then(configuration =>
+		installPackage(packageName, configuration, {
+			skipNestedGitUpdate: argv["skip-nested-git-update"]
+		})
+	)
 	.catch(error => {
 		if (error instanceof DevPackageError) {
 			process.stdout.write(`\n${ clc.red(error.message) }\n`);
