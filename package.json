@@ -13,7 +13,7 @@
     "cli-sprintf-format": "^1.1",
     "es5-ext": "^0.10.46",
     "event-emitter": "^0.3.5",
-    "fs2": "^0.2.13",
+    "fs2": "^0.2.14",
     "log4": "^3.1",
     "log4-nodejs": "^3.1.1",
     "memoizee": "^0.4.14",
