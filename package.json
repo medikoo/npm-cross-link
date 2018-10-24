@@ -18,6 +18,7 @@
     "log4-nodejs": "^3.1.1",
     "memoizee": "^0.4.14",
     "minimist": "^1.2",
+    "semver": "^5.6",
     "split": "^1.0.1"
   },
   "devDependencies": {
