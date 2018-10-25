@@ -82,10 +82,10 @@ const updateProgress = () => {
 };
 
 installPackage.on("start", event => {
-	installsInProgress.set(event.packageName, event);
+	installsInProgress.set(event.name, event);
 	updateProgress();
 });
-installPackage.on("end", ({ packageName: endedPackageName }) => {
+installPackage.on("end", ({ name: endedPackageName }) => {
 	const { type } = installsInProgress.get(endedPackageName);
 	installsInProgress.delete(endedPackageName);
 	log.notice(`${ logWordForms.past[type] } %s`, endedPackageName);
