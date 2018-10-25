@@ -5,7 +5,7 @@ const toPlainObject       = require("es5-ext/object/normalize-options")
     , ensureConfiguration = require("./lib/ensure-configuration")
     , installPackage      = require("./lib/install-package");
 
-module.exports = (packageName, configuration, options = {}) =>
+module.exports = (name, configuration, options = {}) =>
 	installPackage(
-		ensureString(packageName), ensureConfiguration(configuration), toPlainObject(options)
+		{ name: ensureString(name) }, ensureConfiguration(configuration), toPlainObject(options)
 	);

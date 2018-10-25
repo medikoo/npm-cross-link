@@ -93,7 +93,7 @@ installPackage.on("end", ({ name: endedPackageName }) => {
 });
 resolveUserConfiguration()
 	.then(configuration =>
-		installPackage(packageName, configuration, {
+		installPackage({ name: packageName }, configuration, {
 			skipNestedGitUpdate: argv["skip-nested-git-update"]
 		})
 	)
