@@ -33,7 +33,10 @@
     },
     "overrides": [
       {
-        "files": "lib/install-package.js",
+        "files": [
+          "lib/install-package.js",
+          "lib/private/setup-dependencies.js"
+        ],
         "rules": {
           "no-await-in-loop": "off"
         }
