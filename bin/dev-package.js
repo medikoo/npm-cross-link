@@ -60,48 +60,49 @@ const log                      = require("log4").get("dev-package")
     , format                   = require("cli-sprintf-format")
     , cliFooter                = require("cli-progress-footer")()
     , DevPackageError          = require("../lib/dev-package-error")
-    , installPackage           = require("../lib/install-package")
-    , resolveUserConfiguration = require("../lib/resolve-user-configuration");
-
-const installsInProgress = new Map();
-
-const logWordForms = {
-	present: { install: "installing", update: "updating" },
-	past: { install: "installed", update: "updated" }
-};
+    , resolveUserConfiguration = require("../lib/resolve-user-configuration")
+    , installPackage           = require("../");
 
 cliFooter.shouldAddProgressAnimationPrefix = true;
 cliFooter.updateProgress(["resolving user configuration"]);
 
-const updateProgress = () => {
-	cliFooter.updateProgress(
-		Array.from(installsInProgress, ([inProgressPackageName, { type }]) =>
-			format(`${ logWordForms.present[type] } %s`, inProgressPackageName)
-		)
-	);
-};
+(async () => {
+	const configuration = await resolveUserConfiguration();
+	const installPromise = installPackage(packageName, configuration, {
+		skipGitUpdate: argv["skip-git-update"]
+	});
 
-installPackage.on("start", event => {
-	installsInProgress.set(event.name, event);
-	updateProgress();
-});
-installPackage.on("end", ({ name: endedPackageName }) => {
-	const { type } = installsInProgress.get(endedPackageName);
-	installsInProgress.delete(endedPackageName);
-	log.notice(`${ logWordForms.past[type] } %s`, endedPackageName);
-	updateProgress();
-});
-resolveUserConfiguration()
-	.then(configuration =>
-		installPackage({ name: packageName }, configuration, {
-			skipGitUpdate: argv["skip-git-update"]
-		})
-	)
-	.catch(error => {
+	const installsInProgress = new Map();
+
+	const logWordForms = {
+		present: { install: "installing", update: "updating" },
+		past: { install: "installed", update: "updated" }
+	};
+	const updateProgress = () => {
+		cliFooter.updateProgress(
+			Array.from(installsInProgress, ([inProgressPackageName, { type }]) =>
+				format(`${ logWordForms.present[type] } %s`, inProgressPackageName)
+			)
+		);
+	};
+	installPromise.on("start", event => {
+		installsInProgress.set(event.name, event);
+		updateProgress();
+	});
+	installPromise.on("end", ({ name: endedPackageName }) => {
+		const { type } = installsInProgress.get(endedPackageName);
+		installsInProgress.delete(endedPackageName);
+		log.notice(`${ logWordForms.past[type] } %s`, endedPackageName);
+		updateProgress();
+	});
+	try {
+		await installPromise;
+	} catch (error) {
 		if (error instanceof DevPackageError) {
 			process.stdout.write(`\n${ clc.red(error.message) }\n`);
 			process.exit(1);
 			return;
 		}
 		throw error;
-	});
+	}
+})();
