@@ -60,7 +60,7 @@ const log                      = require("log4").get("dev-package")
     , format                   = require("cli-sprintf-format")
     , cliFooter                = require("cli-progress-footer")()
     , DevPackageError          = require("../lib/dev-package-error")
-    , resolveUserConfiguration = require("../lib/resolve-user-configuration")
+    , resolveUserConfiguration = require("../lib/private/resolve-user-configuration")
     , installPackage           = require("../");
 
 cliFooter.shouldAddProgressAnimationPrefix = true;
