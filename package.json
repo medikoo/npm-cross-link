@@ -31,6 +31,9 @@
     "env": {
       "node": true
     },
+    "rules": {
+      "max": 100
+    },
     "overrides": [
       {
         "files": [
