@@ -34,8 +34,8 @@
     "overrides": [
       {
         "files": [
-          "lib/install-package.js",
-          "lib/private/setup-dependencies.js"
+          "lib/private/install-package/index.js",
+          "lib/private/install-package/setup-dependencies.js"
         ],
         "rules": {
           "no-await-in-loop": "off"

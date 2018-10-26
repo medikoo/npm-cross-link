@@ -5,7 +5,7 @@ const toPlainObject       = require("es5-ext/object/normalize-options")
     , ee                  = require("event-emitter")
     , unifyEmitters       = require("event-emitter/unify")
     , ensureConfiguration = require("./lib/ensure-configuration")
-    , installPackage      = require("./lib/install-package");
+    , installPackage      = require("./lib/private/install-package/index");
 
 module.exports = (name, configuration, options = {}) => {
 	const progressData = ee({ done: new Set(), ongoingMap: new Map() });
