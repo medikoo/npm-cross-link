@@ -32,7 +32,13 @@
       "node": true
     },
     "rules": {
-      "max": 100
+      "max-lines": [
+        "error",
+        {
+          "max": 100
+        }
+      ],
+      "max-lines-per-function": "off"
     },
     "overrides": [
       {
