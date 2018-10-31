@@ -8,7 +8,7 @@ const toPlainObject       = require("es5-ext/object/normalize-options")
     , installPackage      = require("./lib/private/install-package/index");
 
 module.exports = (name, configuration, options = {}) => {
-	const progressData = ee({ done: new Set(), ongoingMap: new Map() });
+	const progressData = ee({ done: new Set(), ongoingMap: new Map(), externalsMap: new Map() });
 	const promise = ee(
 		installPackage(
 			{ name: ensureString(name) }, ensureConfiguration(configuration),

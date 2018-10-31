@@ -13,12 +13,14 @@
     "cli-sprintf-format": "^1.1",
     "es5-ext": "^0.10.46",
     "event-emitter": "^0.3.5",
-    "fs2": "^0.2.15",
+    "fs2": "^0.2.19",
+    "got": "^9.2.2",
     "log4": "^3.1",
     "log4-nodejs": "^3.1.1",
     "memoizee": "^0.4.14",
     "minimist": "^1.2",
     "semver": "^5.6",
+    "tar": "^4.4.6",
     "split": "^1.0.1"
   },
   "devDependencies": {
