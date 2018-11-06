@@ -8,8 +8,11 @@ process.on("unhandledRejection", reason => { throw reason; });
 
 require("log4-nodejs")({ defaultNamespace: "dev-package" });
 
-const meta = require("../package")
-    , argv = require("minimist")(process.argv.slice(2), { boolean: "skip-git-update" });
+const meta = require("../package");
+
+const argv = require("minimist")(process.argv.slice(2), {
+	boolean: ["enable-git-push", "skip-git-update"]
+});
 
 const usage = `dev-package v${ meta.version } - Install dev package
 
@@ -21,6 +24,7 @@ where <command> is one of:
 Options:
 
     --skip-git-update      Do not 'git pull' on update
+    --enable-git-push      Push committed changes to remote
     --version,         -v  Display version
     --help,            -h  Show this message
 
@@ -55,4 +59,7 @@ if (!packageName) {
 	process.exit(1);
 }
 
-require("../lib/private/cli")(packageName, { skipGitUpdate: argv["skip-git-update"] });
+require("../lib/private/cli")(packageName, {
+	gitPush: argv["enable-git-push"],
+	skipGitUpdate: argv["skip-git-update"]
+});
