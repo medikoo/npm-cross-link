@@ -19,7 +19,7 @@ const usage = `dev-package v${ meta.version } - Install dev package
 Usage: dev-package <command>
 
 where <command> is one of:
-    install, update
+    install
 
 Options:
 
@@ -47,7 +47,7 @@ if (!command) {
 	process.exit(1);
 }
 
-const supportedCommands = new Set(["install", "update"]);
+const supportedCommands = new Set(["install"]);
 
 if (!supportedCommands.has(command)) {
 	process.stderr.write(`${ command } is not a suppported command\n\n${ usage }`);
