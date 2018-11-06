@@ -46,7 +46,7 @@
       {
         "files": [
           "lib/private/install-package/index.js",
-          "lib/private/install-package/setup-dependencies.js"
+          "lib/private/install-package/setup-dependencies/index.js"
         ],
         "rules": {
           "no-await-in-loop": "off"
