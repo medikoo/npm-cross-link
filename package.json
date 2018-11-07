@@ -21,6 +21,7 @@
     "minimist": "^1.2",
     "semver": "^5.6",
     "tar": "^4.4.6",
+    "timers-ext": "^0.1.7",
     "split": "^1.0.1"
   },
   "devDependencies": {
