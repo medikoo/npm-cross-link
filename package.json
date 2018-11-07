@@ -40,7 +40,8 @@
           "max": 100
         }
       ],
-      "max-lines-per-function": "off"
+      "max-lines-per-function": "off",
+      "max-statements": "off"
     },
     "overrides": [
       {
