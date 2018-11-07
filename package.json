@@ -33,6 +33,9 @@
     "env": {
       "node": true
     },
+    "parserOptions": {
+      "ecmaVersion": 2018
+    },
     "rules": {
       "max-lines": [
         "error",
