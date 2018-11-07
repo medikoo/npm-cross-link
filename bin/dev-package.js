@@ -14,24 +14,50 @@ const argv = require("minimist")(process.argv.slice(2), {
 	boolean: ["disable-git-pull", "enable-git-push"]
 });
 
-const usage = `dev-package v${ meta.version } - Install dev package
+const usage = `dev-package v${ meta.version }
 
-Usage: dev-package <command>
+Usage: dev-package [-h | --help] <command> [<args>]
 
 where <command> is one of:
     install
+
+dev-package <command> -h  quick help on <command>
+
+Options:
+
+    --help,            -h  Show this message
+
+`;
+
+const commandUsage = new Map([
+	[
+		"install",
+		`dev-package v${ meta.version }
+
+Usage: dev-package install [-h | --help] [--disable-git-pull] [--enable-git-push] [<package-name>]
+
+When <package-name> is provided, it is ensured it's installed and is up to date,
+as located in npm packages folder
+(there are no updates made to eventual project at current working directory)
+
+When <package-name> is not provided then all dependencies of a project at
+current working directory are ensured to be linked or installed
+up to dev-package installation rules
 
 Options:
 
     --disable-git-pull     Do not pull changes from remote
     --enable-git-push      Push committed changes to remote
-    --version,         -v  Display version
     --help,            -h  Show this message
 
-`;
+`
+	]
+]);
+
+const [command, packageName] = argv._;
 
 if (argv.h || argv.help) {
-	process.stdout.write(usage);
+	process.stdout.write(commandUsage.get(command) || usage);
 	return;
 }
 
@@ -39,8 +65,6 @@ if (argv.v || argv.version) {
 	process.stdout.write(`${ meta.version }\n`);
 	return;
 }
-
-const [command, packageName] = argv._;
 
 if (!command) {
 	process.stderr.write(`Provide command name to install\n\n${ usage }`);
@@ -51,11 +75,6 @@ const supportedCommands = new Set(["install"]);
 
 if (!supportedCommands.has(command)) {
 	process.stderr.write(`${ command } is not a suppported command\n\n${ usage }`);
-	process.exit(1);
-}
-
-if (!packageName) {
-	process.stderr.write(`Provide package name to install\n\n${ usage }`);
 	process.exit(1);
 }
 
