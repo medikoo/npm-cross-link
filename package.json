@@ -14,19 +14,19 @@
     "es5-ext": "^0.10.46",
     "event-emitter": "^0.3.5",
     "fs2": "^0.2.20",
-    "got": "^9.2.2",
+    "got": "^9.3.2",
     "log4": "^3.1",
     "log4-nodejs": "^3.1.1",
     "memoizee": "^0.4.14",
     "minimist": "^1.2",
     "semver": "^5.6",
-    "tar": "^4.4.6",
+    "tar": "^4.4.8",
     "timers-ext": "^0.1.7",
     "split": "^1.0.1"
   },
   "devDependencies": {
-    "eslint": "^5.6.1",
-    "eslint-config-medikoo": "^1.43"
+    "eslint": "^5.8",
+    "eslint-config-medikoo": "^1.44"
   },
   "eslintConfig": {
     "extends": "medikoo",
