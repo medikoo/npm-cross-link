@@ -5,6 +5,7 @@
   "bin": {
     "npm-cross-link": "./bin/npm-cross-link.js"
   },
+  "repository": "medikoo/npm-cross-link",
   "dependencies": {
     "child-process-es6-promise": "^1.2",
     "cjs-module": "^1.4",
