@@ -2,6 +2,82 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="1.1.0"></a>
+# 1.1.0 (2018-11-09)
+
+
+### Bug Fixes
+
+* dependency setup ([6b7ed1d](https://github.com/medikoo/dev-package-install/commit/6b7ed1d))
+* do not follow in case of not confirmed dev package ([c00f65b](https://github.com/medikoo/dev-package-install/commit/c00f65b))
+* do not install on spot non semver install ([53c419f](https://github.com/medikoo/dev-package-install/commit/53c419f))
+* ensure to clean progress on error exit ([51c75ed](https://github.com/medikoo/dev-package-install/commit/51c75ed))
+* fix handling of optional dev packages ([1a2255e](https://github.com/medikoo/dev-package-install/commit/1a2255e))
+* getPackageJson error handling ([67b0c41](https://github.com/medikoo/dev-package-install/commit/67b0c41))
+* handling of optional dependencies ([39d8eb3](https://github.com/medikoo/dev-package-install/commit/39d8eb3))
+* isValidSymlink handling ([9e7263e](https://github.com/medikoo/dev-package-install/commit/9e7263e))
+* npm link setup ([0d775cf](https://github.com/medikoo/dev-package-install/commit/0d775cf))
+* npm modules path ([4d49bf0](https://github.com/medikoo/dev-package-install/commit/4d49bf0))
+* recognize `update` command in cli help ([d2be780](https://github.com/medikoo/dev-package-install/commit/d2be780))
+* revert mistakenly commented out code ([4130c88](https://github.com/medikoo/dev-package-install/commit/4130c88))
+* **cli:** --no-pull  arg resolution ([e114c2e](https://github.com/medikoo/dev-package-install/commit/e114c2e))
+* symlink path check ([95987c6](https://github.com/medikoo/dev-package-install/commit/95987c6))
+* update meta after version upgrade ([8dbe1e9](https://github.com/medikoo/dev-package-install/commit/8dbe1e9))
+* update of linked external dependency ([c9f250c](https://github.com/medikoo/dev-package-install/commit/c9f250c))
+
+
+### Features
+
+* cli progress ([559719a](https://github.com/medikoo/dev-package-install/commit/559719a))
+* differentiate between install and update operation ([0823b9f](https://github.com/medikoo/dev-package-install/commit/0823b9f))
+* drop singleton nature ([83766d6](https://github.com/medikoo/dev-package-install/commit/83766d6))
+* enable git push option ([2e91ec7](https://github.com/medikoo/dev-package-install/commit/2e91ec7))
+* ensure npm link error to be fully exposed ([a449389](https://github.com/medikoo/dev-package-install/commit/a449389))
+* ensure npm link points package at path ([5a82732](https://github.com/medikoo/dev-package-install/commit/5a82732))
+* ensure to cleanup after npm crash ([cec7167](https://github.com/medikoo/dev-package-install/commit/cec7167))
+* ensure to link dependency if link is not rigth ([51ffd5b](https://github.com/medikoo/dev-package-install/commit/51ffd5b))
+* general install command ([976b463](https://github.com/medikoo/dev-package-install/commit/976b463))
+* handle gently no packageJson case ([8629a5d](https://github.com/medikoo/dev-package-install/commit/8629a5d))
+* host user specific configuration externally ([9fee809](https://github.com/medikoo/dev-package-install/commit/9fee809))
+* ignore npm error if link was created ([8e9377b](https://github.com/medikoo/dev-package-install/commit/8e9377b))
+* improve error message ([0e5a7ac](https://github.com/medikoo/dev-package-install/commit/0e5a7ac))
+* improve error reporting ([18da647](https://github.com/medikoo/dev-package-install/commit/18da647))
+* improve log message ([9bdcaf6](https://github.com/medikoo/dev-package-install/commit/9bdcaf6))
+* improve logging ([50d9e6c](https://github.com/medikoo/dev-package-install/commit/50d9e6c))
+* improve logging ([92d83a2](https://github.com/medikoo/dev-package-install/commit/92d83a2))
+* improve npm error handling ([ef30cdb](https://github.com/medikoo/dev-package-install/commit/ef30cdb))
+* improve repo update logic ([ab1fc26](https://github.com/medikoo/dev-package-install/commit/ab1fc26))
+* improve warning message ([d030445](https://github.com/medikoo/dev-package-install/commit/d030445))
+* inform of install type ([c2bdf25](https://github.com/medikoo/dev-package-install/commit/c2bdf25))
+* inform on whether repository was created ([ef7cde3](https://github.com/medikoo/dev-package-install/commit/ef7cde3))
+* introduce non dependency cleanup step ([eab04e9](https://github.com/medikoo/dev-package-install/commit/eab04e9))
+* log error in case linked version mismatch version range ([613919f](https://github.com/medikoo/dev-package-install/commit/613919f))
+* make options optional ([15ae780](https://github.com/medikoo/dev-package-install/commit/15ae780))
+* make setupRepository public ([e27e653](https://github.com/medikoo/dev-package-install/commit/e27e653))
+* mark end after pending jobs are finalized ([79aba42](https://github.com/medikoo/dev-package-install/commit/79aba42))
+* new approach for linking/installing externals ([a82d3c2](https://github.com/medikoo/dev-package-install/commit/a82d3c2))
+* new version ([8471227](https://github.com/medikoo/dev-package-install/commit/8471227))
+* pass options to hook ([c32a1fc](https://github.com/medikoo/dev-package-install/commit/c32a1fc))
+* put logs at hidden level, expose emitter ([0eca533](https://github.com/medikoo/dev-package-install/commit/0eca533))
+* remove support for mirror 'update' command ([8a917de](https://github.com/medikoo/dev-package-install/commit/8a917de))
+* rename from dev-package to npm-cross-link ([bf537ed](https://github.com/medikoo/dev-package-install/commit/bf537ed))
+* rename main module to installPackage ([33fb754](https://github.com/medikoo/dev-package-install/commit/33fb754))
+* rename skipGitUpdate to disableGitPull ([4643f51](https://github.com/medikoo/dev-package-install/commit/4643f51))
+* seclude getPackageJson ([d80d71a](https://github.com/medikoo/dev-package-install/commit/d80d71a))
+* simplify CLI args ([3724d59](https://github.com/medikoo/dev-package-install/commit/3724d59))
+* simplify option names ([4aff319](https://github.com/medikoo/dev-package-install/commit/4aff319))
+* **bin:** commands support in binary ([bcdabb6](https://github.com/medikoo/dev-package-install/commit/bcdabb6))
+* **cli:** improve usage message ([f28d614](https://github.com/medikoo/dev-package-install/commit/f28d614))
+* simplify skipGitUpdate handling ([81007d9](https://github.com/medikoo/dev-package-install/commit/81007d9))
+* solidify npm modules path resolution ([59cda84](https://github.com/medikoo/dev-package-install/commit/59cda84))
+* support recovery from any npm link error ([e162fa1](https://github.com/medikoo/dev-package-install/commit/e162fa1))
+* support skipNestedGitUpdate option ([7434735](https://github.com/medikoo/dev-package-install/commit/7434735))
+* support update command ([039d372](https://github.com/medikoo/dev-package-install/commit/039d372))
+* update-all command ([26364b7](https://github.com/medikoo/dev-package-install/commit/26364b7))
+* upgrade external when higher version is discovered ([407b616](https://github.com/medikoo/dev-package-install/commit/407b616))
+
+
+
 <a name="1.0.0"></a>
 # 1.0.0 (2018-11-09)
 
