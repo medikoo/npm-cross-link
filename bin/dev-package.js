@@ -51,6 +51,22 @@ Options:
     --help,            -h  Show this message
 
 `
+	],
+	[
+		"update-all",
+		`dev-package v${ meta.version }
+
+Usage: dev-package update-all [-h | --help] [--disable-git-pull] [--enable-git-push]
+
+Ensures all packages in npm packages folder are properly installed and up to date
+
+Options:
+
+    --disable-git-pull     Do not pull changes from remote
+    --enable-git-push      Push committed changes to remote
+    --help,            -h  Show this message
+
+`
 	]
 ]);
 
@@ -71,14 +87,14 @@ if (!command) {
 	process.exit(1);
 }
 
-const supportedCommands = new Set(["install"]);
+const supportedCommands = new Set(["install", "update-all"]);
 
 if (!supportedCommands.has(command)) {
 	process.stderr.write(`${ command } is not a suppported command\n\n${ usage }`);
 	process.exit(1);
 }
 
-require("../lib/private/cli")(packageName, {
+require("../lib/private/cli")(command, packageName, {
 	gitPull: !argv["disable-git-pull"],
 	gitPush: argv["enable-git-push"]
 });
