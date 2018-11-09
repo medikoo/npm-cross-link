@@ -1,6 +1,6 @@
 # npm-cross-link
 
-## npm package cross linker (an installer for packages developer)
+## An installer for packages developer
 
 ### Use case
 
