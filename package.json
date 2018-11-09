@@ -1,9 +1,9 @@
 {
-  "name": "dev-package",
+  "name": "npm-cross-link",
   "version": "1.0.0",
   "author": "Mariusz Nowak <medyk@medikoo.com> (http://www.medikoo.com/)",
   "bin": {
-    "dev-package": "./bin/dev-package.js"
+    "npm-cross-link": "./bin/npm-cross-link.js"
   },
   "dependencies": {
     "child-process-es6-promise": "^1.2",

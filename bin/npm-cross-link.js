@@ -6,7 +6,7 @@ Error.stackTraceLimit = Infinity;
 
 process.on("unhandledRejection", reason => { throw reason; });
 
-require("log4-nodejs")({ defaultNamespace: "dev-package" });
+require("log4-nodejs")({ defaultNamespace: "npm-cross-link" });
 
 const meta = require("../package");
 

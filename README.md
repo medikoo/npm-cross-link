@@ -1,4 +1,4 @@
-# dev-package
+# npm-cross-link
 
 ## npm package cross linker (an installer for packages developer)
 
@@ -10,7 +10,7 @@ You maintain many npm packages which depend on each other. When developing local
 
 Within [configuration](#configuration) you choose a folder (defaults to `~/npm-packages`) where maintained packages are placed, and predefine (at `packagesMeta`) a _package name_ to _repository url_ mappings of packages you maintain.
 
-When running `dev-package install <package-name>` command following steps are pursued:
+When running `npm-cross-link install <package-name>` command following steps are pursued:
 
 1. If repository is not setup, it is cloned into corresponding folder. Otherwise changes from remote are pulled (can be opt out via `--no-pull`), and optionally committed changes can be pushed (indicate such intent with `--push`)
 2. All maintained project dependencies (also `devDependencies`) are installed according to same flow. Those not maintained (not found in `packagesMeta`) are npm linked to global npm folder, if supported at latest version, otherwise they're installed on spot (but in a form where all its dependencies persist in a dependency folder)
@@ -30,7 +30,7 @@ To avoid confusion it's better to rely on global installation. Still [nvm](https
 
 ### CLI
 
-#### `dev-package install [...options] <package-name>`
+#### `npm-cross-link install [...options] <package-name>`
 
 Installs or updates indicated package (with its dependencies) at packages folder.
 
@@ -41,24 +41,24 @@ _Note: This command doesn't interfere in any way with eventual project at curren
 -   `--no-pull` - By default (for all updated packages) mising updates are pulled from remote. This option turns that off
 -   `--push` - For all updated packages push eventually committed changes to remote
 
-#### `dev-package install [...options]`
+#### `npm-cross-link install [...options]`
 
 Installs and links all maintained dependencies of a project (found at current working directory).  
 Installation rules are same as for package install. Maintained packages are linked to its location, not maintained are linked to global npm folder (unless they do not refer to latest version, as then they're installed on spot)
 
-Supports same options as `dev-package install`
+Supports same options as `npm-cross-link install`
 
-#### `dev-package update-all [...options]`
+#### `npm-cross-link update-all [...options]`
 
 Updates all already installed packages.
 
 _Note: This command doesn't interfere in any way with eventual project at current working directory._
 
-Supports same options as `dev-package install`
+Supports same options as `npm-cross-link install`
 
 ### Configuration
 
-User configuraiton is mandatory and is expected to be placed at `~/.dev-package` path.
+User configuraiton is mandatory and is expected to be placed at `~/.npm-cross-link` path.
 
 It's expected to be a typical Node.js module, that exposes (asynchronously if needed) a configuration object with following properties:
 
@@ -94,7 +94,7 @@ Additional operation that should be done after successful package installation (
 Function is run with following arguments:
 
 -   `packageContext` - All needed information about package that was just installed or updated
--   `userConfiguration` - User configuration as resolved and normalized from `~/.dev-package`
+-   `userConfiguration` - User configuration as resolved and normalized from `~/.npm-cross-link`
 -   `inputOptions` - CLI command options
 
 #### `userDependencies`
