@@ -62,6 +62,8 @@ User configuraiton is mandatory and is expected to be placed at `~/.npm-cross-li
 
 It's expected to be a typical Node.js module, that exposes (asynchronously if needed) a configuration object with following properties:
 
+Example of working configuration can be found at: [medikoo/.npm-cross-link](https://github.com/medikoo/.npm-cross-link/)
+
 #### `packagesPath`
 
 Optional (defaults to `~/npm-packages`). Folder at which maintained packages should be placed
