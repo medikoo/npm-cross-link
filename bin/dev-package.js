@@ -10,7 +10,7 @@ require("log4-nodejs")({ defaultNamespace: "dev-package" });
 
 const meta = require("../package");
 
-const argv = require("minimist")(process.argv.slice(2), { boolean: ["no-pull", "push"] });
+const argv = require("minimist")(process.argv.slice(2), { boolean: ["push"] });
 
 const [command, packageName] = argv._;
 
@@ -37,4 +37,7 @@ if (!supportedCommands.has(command)) {
 	process.exit(1);
 }
 
-require("../lib/private/cli")(command, packageName, { pull: !argv["no-pull"], push: argv.push });
+require("../lib/private/cli")(command, packageName, {
+	pull: argv.pull !== false,
+	push: argv.push !== false
+});
