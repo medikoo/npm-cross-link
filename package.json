@@ -1,11 +1,16 @@
 {
   "private": true,
-  "name": "modules-installer",
+  "name": "setup-own-package",
   "version": "0.0.0",
   "author": "Mariusz Nowak <medyk@medikoo.com> (http://www.medikoo.com/)",
   "dependencies": {
-    "es5-ext": "^0.10.46",
-    "source-map-support": "^0.5.9"
+    "deferred": "^0.7.9",
+    "fs2": "^0.2.8",
+    "log4": "^3.0.1",
+    "log4-nodejs": "^2.3.1",
+    "memoizee": "^0.4.14",
+    "minimist": "^1.2",
+    "@octokit/rest": "^15.11.1"
   },
   "devDependencies": {
     "eslint": "^5.5",
@@ -16,7 +21,15 @@
     "root": true,
     "env": {
       "node": true
-    }
+    },
+    "overrides": [
+      {
+        "files": "lib/setup-package.js",
+        "rules": {
+          "no-await-in-loop": "off"
+        }
+      }
+    ]
   },
   "scripts": {
     "lint": "eslint --ignore-path=.gitignore ."
