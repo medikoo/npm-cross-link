@@ -37,7 +37,4 @@ if (!supportedCommands.has(command)) {
 	process.exit(1);
 }
 
-require("../lib/private/cli")(command, packageName, {
-	gitPull: !argv["no-pull"],
-	gitPush: argv.push
-});
+require("../lib/private/cli")(command, packageName, { pull: !argv["no-pull"], push: argv.push });
