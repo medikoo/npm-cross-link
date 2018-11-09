@@ -10,9 +10,7 @@ require("log4-nodejs")({ defaultNamespace: "dev-package" });
 
 const meta = require("../package");
 
-const argv = require("minimist")(process.argv.slice(2), {
-	boolean: ["disable-git-pull", "enable-git-push"]
-});
+const argv = require("minimist")(process.argv.slice(2), { boolean: ["no-pull", "push"] });
 
 const [command, packageName] = argv._;
 
@@ -40,6 +38,6 @@ if (!supportedCommands.has(command)) {
 }
 
 require("../lib/private/cli")(command, packageName, {
-	gitPull: !argv["disable-git-pull"],
-	gitPush: argv["enable-git-push"]
+	gitPull: !argv["no-pull"],
+	gitPush: argv.push
 });
