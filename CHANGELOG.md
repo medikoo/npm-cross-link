@@ -2,6 +2,21 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="2.0.0"></a>
+# [2.0.0](https://github.com/medikoo/npm-cross-link/compare/v1.1.1...v2.0.0) (2018-11-12)
+
+
+### Features
+
+* optionally pull changes from remote ([d7a297b](https://github.com/medikoo/npm-cross-link/commit/d7a297b))
+
+
+### BREAKING CHANGES
+
+* Changes from remote are now pulled optionally
+
+
+
 <a name="1.1.1"></a>
 ## [1.1.1](https://github.com/medikoo/dev-package-install/compare/v1.1.0...v1.1.1) (2018-11-09)
 
