@@ -10,7 +10,7 @@ require("log4-nodejs")({ defaultNamespace: "npm-cross-link" });
 
 const meta = require("../package");
 
-const argv = require("minimist")(process.argv.slice(2), { boolean: ["push"] });
+const argv = require("minimist")(process.argv.slice(2), { boolean: ["pull", "push"] });
 
 const [command, packageName] = argv._;
 

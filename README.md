@@ -12,7 +12,7 @@ Within [configuration](#configuration) you choose a folder (defaults to `~/npm-p
 
 When running `npm-cross-link install <package-name>` command following steps are pursued:
 
-1. If repository is not setup, it is cloned into corresponding folder. Otherwise changes from remote are pulled (can be opt out via `--no-pull`), and optionally committed changes can be pushed (indicate such intent with `--push`)
+1. If repository is not setup, it is cloned into corresponding folder. Otherwise optionally changes from remote are pulled (`--pull`), and optionally committed changes can be pushed (`--push`)
 2. All maintained project dependencies (also `devDependencies`) are installed according to same flow. Those not maintained (not found in `packagesMeta`) are npm linked to global npm folder, if supported at latest version, otherwise they're installed on spot (but in a form where all its dependencies persist in a dependency folder)
 3. Package is ensured to be linked to global npm folder
 
@@ -38,7 +38,7 @@ _Note: This command doesn't interfere in any way with eventual project at curren
 
 ##### Supported options:
 
--   `--no-pull` - By default (for all updated packages) mising updates are pulled from remote. This option turns that off
+-   `--pull` - Pull eventual new updates from remote
 -   `--push` - For all updated packages push eventually committed changes to remote
 
 #### `npm-cross-link install [...options]`
