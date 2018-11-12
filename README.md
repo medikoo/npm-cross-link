@@ -5,6 +5,10 @@
 
 ## npm packages cross linker (an installer for packages developer)
 
+```sh
+npm install -g npm-cross-link
+```
+
 ### Use case
 
 You maintain many npm packages which depend on each other. When developing locally you prefer to have them setup as git repositories that have dependencies npm linked to their repositories.
