@@ -1,3 +1,6 @@
+![Transpilation status][transpilation-image]
+[![npm version][npm-image]][npm-url]
+
 # npm-cross-link
 
 ## npm packages cross linker (an installer for packages developer)
@@ -102,3 +105,7 @@ Function is run with following arguments:
 Optional. Eventual list of extra (not listed in `package.json`) packages that should not be cleaned up from package `node_modules` folder.
 
 Installer by default removes all dependencies not referenced in package `package.json`. Throught this option we may ensure that if we install something externally or via `afterPackageInstall` hook, it remains untouched.
+
+[transpilation-image]: https://img.shields.io/badge/transpilation-free-brightgreen.svg
+[npm-image]: https://img.shields.io/npm/v/npm-cross-link.svg
+[npm-url]: https://www.npmjs.com/package/npm-cross-link
