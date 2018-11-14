@@ -2,6 +2,53 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="3.0.0"></a>
+# [3.0.0](https://github.com/medikoo/npm-cross-link/compare/v2.0.0...v3.0.0) (2018-11-14)
+
+
+### Bug Fixes
+
+* confirm on satisfiable version range in any case ([886bf3b](https://github.com/medikoo/npm-cross-link/commit/886bf3b))
+* do not apply hooks to not maintaned packages ([aad10e7](https://github.com/medikoo/npm-cross-link/commit/aad10e7))
+
+
+### Features
+
+* do not expose pending jobs on pacakgeContext ([18648cb](https://github.com/medikoo/npm-cross-link/commit/18648cb))
+* expose list of installation jobs per package ([f2663c4](https://github.com/medikoo/npm-cross-link/commit/f2663c4))
+* expose progressData on result instead of just events ([ebcc284](https://github.com/medikoo/npm-cross-link/commit/ebcc284))
+* Improve install in context of maintained ([a2ea872](https://github.com/medikoo/npm-cross-link/commit/a2ea872))
+* minimize after hooks registration ([9095239](https://github.com/medikoo/npm-cross-link/commit/9095239))
+* pass progressData with event, expose type on it ([3c2f8c3](https://github.com/medikoo/npm-cross-link/commit/3c2f8c3))
+* reconfigure into two binaries ([3abed15](https://github.com/medikoo/npm-cross-link/commit/3abed15))
+* reconfigure pendingJobs as after hooks ([cdd1a01](https://github.com/medikoo/npm-cross-link/commit/cdd1a01))
+* rename hooks into installationHooks ([66a8f14](https://github.com/medikoo/npm-cross-link/commit/66a8f14))
+* rename progressData.externalsMap to progressData.externals ([45db94a](https://github.com/medikoo/npm-cross-link/commit/45db94a))
+* rename progressData.ongoingMap into progressData.ongoing ([a795dfd](https://github.com/medikoo/npm-cross-link/commit/a795dfd))
+* rename type into installationType ([3e8ea0d](https://github.com/medikoo/npm-cross-link/commit/3e8ea0d))
+* report eventual "update" as "processing" ([5b491eb](https://github.com/medikoo/npm-cross-link/commit/5b491eb))
+* reuse packageContext as packageProgressData ([49a1839](https://github.com/medikoo/npm-cross-link/commit/49a1839))
+* send report from setupRepository ([7a3fde4](https://github.com/medikoo/npm-cross-link/commit/7a3fde4))
+* turn progressData.done to map ([9dc1847](https://github.com/medikoo/npm-cross-link/commit/9dc1847))
+
+
+### BREAKING CHANGES
+
+* `$ npm-cross-link install` now is represented by `$ npm-cross-link`
+`$ npm-cross-link update-all` now is represented by
+`$ npm-cross-link-update-all`
+* Events are no longer exposed on result promise(instead they're accessible on promise.progressData)
+* progressDataEvent.type was moved to progressDataEvent.progressData.type
+* progressData.done is now a map not a set
+* Pending jobs are now exposed on hooks.after result of ongoing item
+* pacakgeContext.pendingJobs was removed
+* progressData.externalsMap was renamed to progressData.externals
+* progressData.ongoingMap was renamed to progressData.ongoing
+* setupRepository instead of boolean now returns set
+that states which operations were pursued
+
+
+
 <a name="2.0.0"></a>
 # [2.0.0](https://github.com/medikoo/npm-cross-link/compare/v1.1.1...v2.0.0) (2018-11-12)
 
