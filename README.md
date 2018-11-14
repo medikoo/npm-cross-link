@@ -19,7 +19,7 @@ Within [configuration](#configuration) you choose a folder (defaults to `~/npm-p
 
 When running `npm-cross-link <package-name>` following steps are pursued:
 
-1. If repository is not setup, it is cloned into corresponding folder. Otherwise optionally changes from remote are pulled (`--pull`), and optionally committed changes can be pushed (`--push`)
+1. If repository is not setup, it is cloned into corresponding folder. Otherwise optionally new changes from remote can be pulled (`--pull`) and committed changes pushed (`--push`)
 2. All maintained project dependencies (also `devDependencies`) are installed according to same flow. Those not maintained (not found in `packagesMeta`) are npm linked to global npm folder and ensured to be at latest version if one is supported, otherwise they're installed on spot but with its dependencies contained in dependency folder (not top level node_modules)
 3. Package is ensured to be linked to global npm folder
 
@@ -29,9 +29,11 @@ All important events and findings are communicated via logs (level of output can
 
 When relying on npm, it relies on version as accessible via command line.
 
-If you rely on global Node.js installation, then Node.js update doesn't change location of global npm folder, so updates to Node.js are free from side effects when package links are concerned
+If you rely on global Node.js installation, then Node.js update doesn't change location of global npm folder, so updates to Node.js are free from side effects when package links are concerned.
 
-However when relying on [nvm](https://github.com/creationix/nvm), different npm is used with every different Node.js version, which means each Node.js/npm version points to other npm global folder. That's not harmful per se, but on reinstallation all links would be updated to reflect new path. Therefore To avoid confusion it's better to rely on global installation. Still [nvm](https://github.com/creationix/nvm) is great for checking this project out (as then globally installed packages are not affected).
+However when relying on [nvm](https://github.com/creationix/nvm), different npm is used with every different Node.js version, which means each Node.js/npm version points to other npm global folder. That's not harmful per se, but on reinstallation all links would be updated to reflect new path.
+
+To avoid confusion it's better to rely on global installation. Still [nvm](https://github.com/creationix/nvm) is great for checking this project out (as then globally installed packages are not affected).
 
 ### CLI
 
