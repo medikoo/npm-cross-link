@@ -3,7 +3,8 @@
   "version": "2.0.0",
   "author": "Mariusz Nowak <medyk@medikoo.com> (http://www.medikoo.com/)",
   "bin": {
-    "npm-cross-link": "./bin/npm-cross-link.js"
+    "npm-cross-link": "./bin/npm-cross-link.js",
+    "npm-cross-link-update-all": "./bin/npm-cross-link-update-all.js"
   },
   "repository": "medikoo/npm-cross-link",
   "dependencies": {

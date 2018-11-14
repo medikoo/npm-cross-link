@@ -12,19 +12,11 @@ const meta = require("../package");
 
 const argv = require("minimist")(process.argv.slice(2), { boolean: ["pull", "push"] });
 
-const [packageName] = argv._;
+const usage = `npm-cross-link-update-all v${ meta.version }
 
-const usage = `npm-cross-link v${ meta.version }
+Usage: npm-cross-link-update-all [-h | --help] [--no-pull] [--push]
 
-Usage: npm-cross-link [-h | --help] [--no-pull] [--push] [<package-name>]
-
-When <package-name> is provided, it is ensured it's installed and is up to date,
-as located in npm packages folder
-(there are no updates made to eventual project at current working directory)
-
-When <package-name> is not provided then all dependencies of a project at
-current working directory are ensured to be linked or installed
-up to npm-cross-link installation rules
+Ensures all packages in npm packages folder are properly installed and up to date
 
 Options:
 
@@ -44,7 +36,7 @@ if (argv.v || argv.version) {
 	return;
 }
 
-require("../lib/private/cli")("install", packageName, {
+require("../lib/private/cli")("update-all", null, {
 	pull: argv.pull !== false,
 	push: argv.push !== false
 });

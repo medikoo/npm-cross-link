@@ -17,7 +17,7 @@ You maintain many npm packages which depend on each other. When developing local
 
 Within [configuration](#configuration) you choose a folder (defaults to `~/npm-packages`) where maintained packages are placed, and predefine (at `packagesMeta`) a _package name_ to _repository url_ mappings of packages you maintain.
 
-When running `npm-cross-link install <package-name>` following steps are pursued:
+When running `npm-cross-link <package-name>` following steps are pursued:
 
 1. If repository is not setup, it is cloned into corresponding folder. Otherwise optionally changes from remote are pulled (`--pull`), and optionally committed changes can be pushed (`--push`)
 2. All maintained project dependencies (also `devDependencies`) are installed according to same flow. Those not maintained (not found in `packagesMeta`) are npm linked to global npm folder and ensured to be at latest version if one is supported, otherwise they're installed on spot but with its dependencies contained in dependency folder (not top level node_modules)
@@ -35,7 +35,7 @@ However when relying on [nvm](https://github.com/creationix/nvm), different npm 
 
 ### CLI
 
-#### `npm-cross-link install [...options] <package-name>`
+#### `npm-cross-link [...options] <package-name>`
 
 Installs or updates indicated package (with its dependencies) at packages folder.
 
@@ -46,20 +46,20 @@ _Note: This command doesn't interfere in any way with eventual project at curren
 -   `--pull` - Pull eventual new updates from remote
 -   `--push` - For all updated packages push eventually committed changes to remote
 
-#### `npm-cross-link install [...options]`
+#### `npm-cross-link [...options]`
 
 Installs and links all maintained dependencies of a project found at current working directory.  
 Installation rules are same as for package install. Maintained packages are linked to its location, not maintained are linked to global npm folder (unless they do not refer to latest version, as then they're installed on spot)
 
-Supports same options as `npm-cross-link install`
+Supports same options as `npm-cross-link`
 
-#### `npm-cross-link update-all [...options]`
+#### `npm-cross-link-update-all [...options]`
 
 Updates all packages that are already installed at packages folder.
 
 _Note: This command doesn't interfere in any way with eventual project at current working directory._
 
-Supports same options as `npm-cross-link install`
+Supports same options as `npm-cross-link`
 
 ### Configuration
 
