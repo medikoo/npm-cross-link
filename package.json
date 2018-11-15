@@ -11,7 +11,7 @@
     "child-process-es6-promise": "^1.2",
     "cjs-module": "^1.4",
     "cli-color": "^1.4",
-    "cli-progress-footer": "1",
+    "cli-progress-footer": "^1.1",
     "cli-sprintf-format": "^1.1",
     "es5-ext": "^0.10.46",
     "event-emitter": "^0.3.5",
