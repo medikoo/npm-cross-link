@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="3.0.2"></a>
+## [3.0.2](https://github.com/medikoo/npm-cross-link/compare/v3.0.1...v3.0.2) (2018-11-15)
+
+
+### Bug Fixes
+
+* fix NpmCrossLinkError constructor name ([bd57352](https://github.com/medikoo/npm-cross-link/commit/bd57352))
+* fix progressData event so it reflects packageContext ([29c1bf7](https://github.com/medikoo/npm-cross-link/commit/29c1bf7))
+
+
+
 <a name="3.0.1"></a>
 ## [3.0.1](https://github.com/medikoo/npm-cross-link/compare/v3.0.0...v3.0.1) (2018-11-14)
 
