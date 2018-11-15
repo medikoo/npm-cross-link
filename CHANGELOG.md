@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="3.1.4"></a>
+## [3.1.4](https://github.com/medikoo/npm-cross-link/compare/v3.1.3...v3.1.4) (2018-11-15)
+
+
+### Bug Fixes
+
+* fix git repository detection ([3ba4350](https://github.com/medikoo/npm-cross-link/commit/3ba4350))
+* job name ([d270b16](https://github.com/medikoo/npm-cross-link/commit/d270b16))
+* report unrecognized job ([b60765d](https://github.com/medikoo/npm-cross-link/commit/b60765d))
+
+
+
 <a name="3.1.3"></a>
 ## [3.1.3](https://github.com/medikoo/npm-cross-link/compare/v3.1.2...v3.1.3) (2018-11-15)
 
