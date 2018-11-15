@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="3.1.1"></a>
+## [3.1.1](https://github.com/medikoo/npm-cross-link/compare/v3.1.0...v3.1.1) (2018-11-15)
+
+
+### Bug Fixes
+
+* ensure to report installed package in ongoing ([2e6c9f5](https://github.com/medikoo/npm-cross-link/commit/2e6c9f5))
+* install of not maintained package ([9c87e88](https://github.com/medikoo/npm-cross-link/commit/9c87e88))
+* windows support ([35d0f5e](https://github.com/medikoo/npm-cross-link/commit/35d0f5e))
+
+
+
 <a name="3.1.0"></a>
 # [3.1.0](https://github.com/medikoo/npm-cross-link/compare/v3.0.3...v3.1.0) (2018-11-15)
 
