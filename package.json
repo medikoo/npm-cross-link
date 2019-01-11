@@ -9,14 +9,14 @@
   "repository": "medikoo/npm-cross-link",
   "dependencies": {
     "child-process-es6-promise": "^1.2",
-    "cjs-module": "^1.4",
+    "cjs-module": "^1.5",
     "cli-color": "^1.4",
     "cli-progress-footer": "^1.1",
     "cli-sprintf-format": "^1.1",
     "es5-ext": "^0.10.46",
     "event-emitter": "^0.3.5",
-    "fs2": "^0.2.21",
-    "got": "^9.3.2",
+    "fs2": "^0.3",
+    "got": "^9.5",
     "log4": "^3.1",
     "log4-nodejs": "^3.1.1",
     "memoizee": "^0.4.14",
@@ -27,7 +27,7 @@
     "split": "^1.0.1"
   },
   "devDependencies": {
-    "eslint": "^5.8",
+    "eslint": "^5.12",
     "eslint-config-medikoo": "2"
   },
   "eslintConfig": {
