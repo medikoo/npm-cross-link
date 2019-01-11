@@ -28,7 +28,7 @@
   },
   "devDependencies": {
     "eslint": "^5.8",
-    "eslint-config-medikoo": "^1.44"
+    "eslint-config-medikoo": "2"
   },
   "eslintConfig": {
     "extends": "medikoo",
@@ -38,16 +38,6 @@
     },
     "parserOptions": {
       "ecmaVersion": 2018
-    },
-    "rules": {
-      "max-lines": [
-        "error",
-        {
-          "max": 100
-        }
-      ],
-      "max-lines-per-function": "off",
-      "max-statements": "off"
     },
     "overrides": [
       {
