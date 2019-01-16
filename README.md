@@ -20,7 +20,11 @@ Within [configuration](#configuration) you choose a folder (defaults to `~/npm-p
 When running `npm-cross-link <package-name>` following steps are pursued:
 
 1. If repository is not setup, it is cloned into corresponding folder. Otherwise optionally new changes from remote can be pulled (`--pull`) and committed changes pushed (`--push`)
-2. All maintained project dependencies (also `devDependencies`) are installed according to same flow. Those not maintained (not found in `packagesMeta`) are npm linked to global npm folder and ensured to be at latest version if one is supported, otherwise they're installed on spot but with its dependencies contained in dependency folder (not top level node_modules)
+2. All maintained project dependencies (also `devDependencies` and eventual `optionalDependencies`) are installed according to same flow.
+
+    - Not maintained dependencies (not found in `packagesMeta`) if at latest version are ensured to be installed globally and npm linked to global npm folder. Otherwise they're installed on spot but with its dependencies contained in dependency folder (not top level node_modules).
+    - Maintained project dependencies (those found in `packagesMeta`) if referenced version matches local, are simply cross linked linked, otherwise they're istalled on spot )with its dependencies contained in dependency folder, not top level node_modules).
+
 3. Package is ensured to be linked to global npm folder
 
 All important events and findings are communicated via logs (level of output can be fine tuned via [LOG_LEVEL](https://github.com/medikoo/log/#log_level) env setting)
