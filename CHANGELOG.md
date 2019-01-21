@@ -2,6 +2,26 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="4.0.0"></a>
+# [4.0.0](https://github.com/medikoo/npm-cross-link/compare/v3.1.4...v4.0.0) (2019-01-21)
+
+
+### Features
+
+* install local deps in place if not at local version ([9fd6b4a](https://github.com/medikoo/npm-cross-link/commit/9fd6b4a))
+
+
+### BREAKING CHANGES
+
+* So far local (developed) dependencies where linked no matter the
+referenced version in package.json.
+Since now npm versions are installed in place
+if referenced version doesn't match local one.
+This ensures we should always have packages working
+and allow more controlled upgrades of majors
+
+
+
 <a name="3.1.4"></a>
 ## [3.1.4](https://github.com/medikoo/npm-cross-link/compare/v3.1.3...v3.1.4) (2018-11-15)
 
