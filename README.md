@@ -23,7 +23,7 @@ When running `npm-cross-link <package-name>` following steps are pursued:
 2. All maintained project dependencies (also `devDependencies` and eventual `optionalDependencies`) are installed according to same flow.
 
     - Not maintained dependencies (not found in `packagesMeta`) if at latest version are ensured to be installed globally and npm linked to global npm folder. Otherwise they're installed on spot but with its dependencies contained in dependency folder (not top level node_modules).
-    - Maintained project dependencies (those found in `packagesMeta`) if referenced version matches local, are simply cross linked linked, otherwise they're istalled on spot )with its dependencies contained in dependency folder, not top level node_modules).
+    - Maintained project dependencies (those found in `packagesMeta`) if referenced version matches local, are simply cross linked linked, otherwise they're istalled on spot (with its dependencies contained in dependency folder, not top level node_modules).
 
 3. Package is ensured to be linked to global npm folder
 
@@ -87,7 +87,7 @@ Required. Meta data of each maintained package. At this point just `repoUrl` is 
 {
 	"packagesMeta": {
 		"es6-symbol": {
-			"repoUrl": "git@github.com:eslint/es6-symbol.git"
+			"repoUrl": "git@github.com:medikoo/es6-symbol.git"
 		},
 		"memoizee": {
 			"repoUrl": "git@github.com:medikoo/memoizee.git"
