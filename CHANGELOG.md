@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="5.0.2"></a>
+## [5.0.2](https://github.com/medikoo/npm-cross-link/compare/v5.0.1...v5.0.2) (2019-02-04)
+
+
+### Bug Fixes
+
+* ensure to remove unexpected named dependencies ([7e4ef7b](https://github.com/medikoo/npm-cross-link/commit/7e4ef7b))
+* improve external consistency detection ([b01dcac](https://github.com/medikoo/npm-cross-link/commit/b01dcac))
+
+
+
 <a name="5.0.1"></a>
 ## [5.0.1](https://github.com/medikoo/npm-cross-link/compare/v5.0.0...v5.0.1) (2019-02-04)
 
