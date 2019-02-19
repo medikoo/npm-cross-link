@@ -7,10 +7,11 @@ const toPlainObject       = require("es5-ext/object/normalize-options")
     , installPackage      = require("./lib/private/install-package");
 
 module.exports = (name, configuration, options = {}) => {
+	name = ensureString(name);
 	const progressData = createProgressData();
+	progressData.topPackageName = name;
 	const promise = installPackage(
-		{ name: ensureString(name) }, ensureConfiguration(configuration), toPlainObject(options),
-		progressData
+		{ name }, ensureConfiguration(configuration), toPlainObject(options), progressData
 	);
 	promise.progressData = progressData;
 	return promise;
