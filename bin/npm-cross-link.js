@@ -11,8 +11,8 @@ require("log-node")({ defaultNamespace: "npm-cross-link" });
 const meta = require("../package");
 
 const argv = require("minimist")(process.argv.slice(2), {
-	boolean: ["help", "pull", "push", "version"],
-	alias: { help: "h", version: "v" }
+	boolean: ["global", "help", "pull", "push", "version"],
+	alias: { global: "g", help: "h", version: "v" }
 });
 
 const [packageName] = argv._;
@@ -21,9 +21,9 @@ const usage = `npm-cross-link v${ meta.version }
 
 Usage: npm-cross-link [-h | --help] [--no-pull] [--push] [<package-name>]
 
-When <package-name> is provided, it is ensured it's installed and is up to date,
-as located in npm packages folder
-(there are no updates made to eventual project at current working directory)
+When <package-name> is provided, it is linked into project folder
+(unless it's a global installation, then package is ensured to be linked
+globally, and working directory is not affected)
 
 When <package-name> is not provided then all dependencies of a project at
 current working directory are ensured to be linked or installed
@@ -31,9 +31,10 @@ up to npm-cross-link installation rules
 
 Options:
 
-    --pull      Pull changes from remote
-    --push      Push committed changes to remote
-    --help, -h  Show this message
+    --global, -g  Install package globally
+    --pull        Pull changes from remote
+    --push        Push committed changes to remote
+    --help,   -h  Show this message
 
 `;
 
@@ -47,4 +48,8 @@ if (argv.version) {
 	return;
 }
 
-require("../lib/private/cli")("install", packageName, { pull: argv.pull, push: argv.push });
+require("../lib/private/cli")("install", packageName, {
+	global: argv.global,
+	pull: argv.pull,
+	push: argv.push
+});
