@@ -30,7 +30,7 @@ Options:
 
     --pull      Pull changes from remote
     --push      Push committed changes to remote
-    --help,            -h  Show this message
+    --help, -h  Show this message
 
 `;
 
