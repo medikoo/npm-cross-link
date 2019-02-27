@@ -1,13 +1,13 @@
 "use strict";
 
 const toPlainObject            = require("es5-ext/object/normalize-options")
-    , ensureString             = require("es5-ext/object/validate-stringifiable-value")
+    , ensurePackageName        = require("./lib/ensure-package-name")
     , ensureConfiguration      = require("./lib/private/ensure-user-configuration")
     , createProgressData       = require("./lib/private/create-progress-data")
     , installMaintainedPackage = require("./lib/private/install-maintained-package");
 
 module.exports = (name, configuration, options = {}) => {
-	name = ensureString(name);
+	name = ensurePackageName(name);
 	const progressData = createProgressData();
 	progressData.topPackageName = name;
 	const promise = installMaintainedPackage(

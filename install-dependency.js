@@ -3,6 +3,7 @@
 const toPlainObject            = require("es5-ext/object/normalize-options")
     , ensureString             = require("es5-ext/object/validate-stringifiable-value")
     , { resolve }              = require("path")
+    , ensurePackageName        = require("./lib/ensure-package-name")
     , NpmCrossLinkError        = require("./lib/npm-cross-link-error")
     , ensureConfiguration      = require("./lib/private/ensure-user-configuration")
     , createProgressData       = require("./lib/private/create-progress-data")
@@ -12,7 +13,7 @@ const toPlainObject            = require("es5-ext/object/normalize-options")
 
 module.exports = (path, dependencyName, userConfiguration, options = {}) => {
 	path = resolve(ensureString(path));
-	dependencyName = ensureString(dependencyName);
+	dependencyName = ensurePackageName(dependencyName);
 	const progressData = createProgressData();
 	const packageContext = { path };
 	packageContext.packageJson = getPackageJson(path);
