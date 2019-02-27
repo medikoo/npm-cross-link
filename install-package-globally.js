@@ -6,12 +6,12 @@ const toPlainObject          = require("es5-ext/object/normalize-options")
     , createProgressData     = require("./lib/private/create-progress-data")
     , installPackageGlobally = require("./lib/private/install-package-globally");
 
-module.exports = (name, configuration, options = {}) => {
+module.exports = (name, userConfiguration, inputOptions = {}) => {
 	name = ensurePackageName(name);
 	const progressData = createProgressData();
 	progressData.topPackageName = name;
 	const promise = installPackageGlobally(
-		{ name }, ensureConfiguration(configuration), toPlainObject(options), progressData
+		{ name }, ensureConfiguration(userConfiguration), toPlainObject(inputOptions), progressData
 	);
 	promise.progressData = progressData;
 	return promise;

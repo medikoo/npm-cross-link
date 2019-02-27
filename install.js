@@ -9,7 +9,7 @@ const toPlainObject       = require("es5-ext/object/normalize-options")
     , install             = require("./lib/private/install")
     , getPackageJson      = require("./lib/private/get-package-json");
 
-module.exports = (path, configuration, options = {}) => {
+module.exports = (path, userConfiguration, inputOptions = {}) => {
 	path = resolve(ensureString(path));
 	const progressData = createProgressData();
 	const packageContext = { path };
@@ -19,7 +19,8 @@ module.exports = (path, configuration, options = {}) => {
 	}
 	progressData.topPackageName = packageContext.name = packageContext.packageJson.name;
 	const promise = install(
-		packageContext, ensureConfiguration(configuration), toPlainObject(options), progressData
+		packageContext, ensureConfiguration(userConfiguration), toPlainObject(inputOptions),
+		progressData
 	);
 	promise.progressData = progressData;
 	return promise;

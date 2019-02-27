@@ -11,7 +11,7 @@ const toPlainObject            = require("es5-ext/object/normalize-options")
     , getPackageJson           = require("./lib/private/get-package-json")
     , resolveDependencyContext = require("./lib/private/resolve-dependency-context");
 
-module.exports = (path, dependencyName, userConfiguration, options = {}) => {
+module.exports = (path, dependencyName, userConfiguration, inputOptions = {}) => {
 	path = resolve(ensureString(path));
 	dependencyName = ensureString(dependencyName);
 	let dependencyVersionRange;
@@ -33,7 +33,7 @@ module.exports = (path, dependencyName, userConfiguration, options = {}) => {
 	);
 	if (dependencyVersionRange) dependencyContext.versionRange = dependencyVersionRange;
 	const promise = installDependency(
-		dependencyContext, userConfiguration, toPlainObject(options), progressData
+		dependencyContext, userConfiguration, toPlainObject(inputOptions), progressData
 	);
 	promise.progressData = progressData;
 	return promise;
