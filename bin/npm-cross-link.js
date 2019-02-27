@@ -11,8 +11,9 @@ require("log-node")({ defaultNamespace: "npm-cross-link" });
 const meta = require("../package");
 
 const argv = require("minimist")(process.argv.slice(2), {
-	boolean: ["global", "help", "pull", "push", "version"],
-	alias: { global: "g", help: "h", version: "v" }
+	boolean: ["global", "help", "pull", "push", "save", "version"],
+	alias: { global: "g", help: "h", version: "v" },
+	default: { save: true }
 });
 
 const [packageName] = argv._;
@@ -51,5 +52,6 @@ if (argv.version) {
 require("../lib/private/cli")("install", packageName, {
 	global: argv.global,
 	pull: argv.pull,
-	push: argv.push
+	push: argv.push,
+	noSave: !argv.save
 });
