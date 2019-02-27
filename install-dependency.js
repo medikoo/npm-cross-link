@@ -13,6 +13,12 @@ const toPlainObject            = require("es5-ext/object/normalize-options")
 
 module.exports = (path, dependencyName, userConfiguration, options = {}) => {
 	path = resolve(ensureString(path));
+	dependencyName = ensureString(dependencyName);
+	let dependencyVersionRange;
+	if (dependencyName.slice(1).includes("@")) {
+		dependencyVersionRange = dependencyName.slice(dependencyName.lastIndexOf("@") + 1);
+		dependencyName = dependencyName.slice(0, dependencyName.lastIndexOf("@"));
+	}
 	dependencyName = ensurePackageName(dependencyName);
 	const progressData = createProgressData();
 	const packageContext = { path };
@@ -22,9 +28,12 @@ module.exports = (path, dependencyName, userConfiguration, options = {}) => {
 	}
 	progressData.topPackageName = packageContext.name = packageContext.packageJson.name || "<main>";
 	userConfiguration = ensureConfiguration(userConfiguration);
+	const dependencyContext = resolveDependencyContext(
+		packageContext, dependencyName, userConfiguration
+	);
+	if (dependencyVersionRange) dependencyContext.versionRange = dependencyVersionRange;
 	const promise = installDependency(
-		resolveDependencyContext(packageContext, dependencyName, userConfiguration),
-		userConfiguration, toPlainObject(options), progressData
+		dependencyContext, userConfiguration, toPlainObject(options), progressData
 	);
 	promise.progressData = progressData;
 	return promise;
