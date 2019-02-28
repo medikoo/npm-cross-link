@@ -14,9 +14,9 @@ npm install -g npm-cross-link
 You maintain many npm packages and prefer to cross install them via `npm link`, handling such setup manually can be time taking and error-prone.
 
 `npm-cross-link` is the npm installer that ensures all latest versions of dependencies are linked to global folder
-and non latest versions of are installed on spot (but with its deep dependencies located in its own `node_modules)
+and non latest versions of are installed on spot (but with its deep dependencies located in its own `node_modules`)
 
-For maintained packages, it ensures it's local installation is linked into global folder
+For maintained packages, it ensures its local installation is linked into global folder
 
 ### How it works?
 
