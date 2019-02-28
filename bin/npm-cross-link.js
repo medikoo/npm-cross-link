@@ -3,6 +3,7 @@
 "use strict";
 
 require("essentials");
+require("fs2/descriptors-handler")();
 
 require("log-node")({ defaultNamespace: "npm-cross-link" });
 
