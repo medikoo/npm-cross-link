@@ -14,6 +14,77 @@ All notable changes to this project will be documented in this file. See [standa
 -   improve error message ([85f3fb6](https://github.com/medikoo/npm-cross-link/commit/85f3fb6))
 -   support username/reponame github repo notation ([6bc7f95](https://github.com/medikoo/npm-cross-link/commit/6bc7f95))
 
+# [6.0.0](https://github.com/medikoo/npm-cross-link/compare/v5.1.0...v6.0.0) (2019-02-28)
+
+### Bug Fixes
+
+-   do not proceed if `package.json` not found ([4b6db15](https://github.com/medikoo/npm-cross-link/commit/4b6db15))
+-   do not rewrite package.json on global install ([b29fca5](https://github.com/medikoo/npm-cross-link/commit/b29fca5))
+-   error propagation ([2faa83c](https://github.com/medikoo/npm-cross-link/commit/2faa83c))
+-   typo ([8484bd1](https://github.com/medikoo/npm-cross-link/commit/8484bd1))
+
+### Features
+
+-   basic cache mechanism ([95cfc53](https://github.com/medikoo/npm-cross-link/commit/95cfc53))
+-   cache on spot installations ([0e74531](https://github.com/medikoo/npm-cross-link/commit/0e74531))
+-   cache only npm publications ([9317d63](https://github.com/medikoo/npm-cross-link/commit/9317d63))
+-   do not crash if package.json doesn't exist ([f7aa5dc](https://github.com/medikoo/npm-cross-link/commit/f7aa5dc))
+-   ensure to resolve correct versions from maintained deps ([733a3fe](https://github.com/medikoo/npm-cross-link/commit/733a3fe))
+-   handle git repo references efficiently ([29c7894](https://github.com/medikoo/npm-cross-link/commit/29c7894))
+-   handle non overridable externals properly ([f234351](https://github.com/medikoo/npm-cross-link/commit/f234351))
+-   if non semver range, always install in place ([1f6422e](https://github.com/medikoo/npm-cross-link/commit/1f6422e))
+-   improve CLI message ([24a6028](https://github.com/medikoo/npm-cross-link/commit/24a6028))
+-   improve error message ([f2f6608](https://github.com/medikoo/npm-cross-link/commit/f2f6608))
+-   improve external setup ([7b29664](https://github.com/medikoo/npm-cross-link/commit/7b29664))
+-   improve jobs logging ([1fe3566](https://github.com/medikoo/npm-cross-link/commit/1fe3566))
+-   improve log location ([5ea150a](https://github.com/medikoo/npm-cross-link/commit/5ea150a))
+-   improve logging ([3d986f0](https://github.com/medikoo/npm-cross-link/commit/3d986f0))
+-   improve logging ([528aa54](https://github.com/medikoo/npm-cross-link/commit/528aa54))
+-   improve package name validation ([ef7cb78](https://github.com/medikoo/npm-cross-link/commit/ef7cb78))
+-   install on spot for misversioned local ([2f4a827](https://github.com/medikoo/npm-cross-link/commit/2f4a827))
+-   on npm-cross-link <pkgName> install pkgNam as dep ([c720ec0](https://github.com/medikoo/npm-cross-link/commit/c720ec0))
+-   optimize further installation ([9fad7d7](https://github.com/medikoo/npm-cross-link/commit/9fad7d7))
+-   output log only when it makes sense ([289830c](https://github.com/medikoo/npm-cross-link/commit/289830c))
+-   proper location for new package.json section ([eea4e92](https://github.com/medikoo/npm-cross-link/commit/eea4e92))
+-   rely on etag caching ([82193f9](https://github.com/medikoo/npm-cross-link/commit/82193f9))
+-   speedup npm registry meta resolution ([f37b4e7](https://github.com/medikoo/npm-cross-link/commit/f37b4e7))
+-   support 'global' option ([d2368ae](https://github.com/medikoo/npm-cross-link/commit/d2368ae))
+-   support global installs of externals ([3be98f4](https://github.com/medikoo/npm-cross-link/commit/3be98f4))
+-   support saveMode option ([44a57ff](https://github.com/medikoo/npm-cross-link/commit/44a57ff))
+-   support specifying version in install-dependency ([f04aac2](https://github.com/medikoo/npm-cross-link/commit/f04aac2))
+-   update package.json dependencies sections ([6d90b83](https://github.com/medikoo/npm-cross-link/commit/6d90b83))
+-   write updated version in case of updateDependency ([3a67921](https://github.com/medikoo/npm-cross-link/commit/3a67921))
+
+### BREAKING CHANGES
+
+-   Changed behavior of:
+    \$ npm-cross-link <package-name>
+    It now installs mentioned package as a dependency and does not ensure
+    it's installed gobally
+-   If local installation exposes no version, while there's
+    published version that matches version range
+    install on spot
+-   Non semver referenced local installs are now installed
+    on spot instead of being linked
+
+# [5.1.0](https://github.com/medikoo/npm-cross-link/compare/v5.0.2...v5.1.0) (2019-02-19)
+
+### Bug Fixes
+
+-   install of not published dependencies ([c8a379e](https://github.com/medikoo/npm-cross-link/commit/c8a379e))
+-   resolve correct registry url ([e8df91c](https://github.com/medikoo/npm-cross-link/commit/e8df91c))
+
+### Features
+
+-   expose topPackageName on progressData ([ab2c468](https://github.com/medikoo/npm-cross-link/commit/ab2c468))
+-   improve error logging ([e6e1a21](https://github.com/medikoo/npm-cross-link/commit/e6e1a21))
+-   improve log levels choice ([7407bf4](https://github.com/medikoo/npm-cross-link/commit/7407bf4))
+-   improve log message ([8b2d935](https://github.com/medikoo/npm-cross-link/commit/8b2d935))
+-   improve log message ([f4c61da](https://github.com/medikoo/npm-cross-link/commit/f4c61da))
+-   improve log message ([a62b877](https://github.com/medikoo/npm-cross-link/commit/a62b877))
+-   log npm view output ([806ea63](https://github.com/medikoo/npm-cross-link/commit/806ea63))
+-   support npm registry authentication ([cbc9560](https://github.com/medikoo/npm-cross-link/commit/cbc9560))
+
 <a name="5.0.2"></a>
 
 ## [5.0.2](https://github.com/medikoo/npm-cross-link/compare/v5.0.1...v5.0.2) (2019-02-04)
