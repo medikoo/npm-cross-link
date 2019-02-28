@@ -20,22 +20,36 @@ const [packageName] = argv._;
 
 const usage = `npm-cross-link v${ meta.version }
 
-Usage: npm-cross-link [-h | --help] [--no-pull] [--push] [<package-name>]
+Usage:
 
-When <package-name> is provided, it is linked into project folder
-(unless it's a global installation, then package is ensured to be linked
-globally, and working directory is not affected)
+npm-cross-link                                         (in package dir)
+npm-cross-link    [<@scope>/]<name>[@<version range>]  (in package dir)
+npm-cross-link -g [<@scope>/]<name>
 
-When <package-name> is not provided then all dependencies of a project at
-current working directory are ensured to be linked or installed
-up to npm-cross-link installation rules
+common-options: [-h | --help] [--pull] [--push]
 
-Options:
-
-    --global, -g  Install package globally
-    --pull        Pull changes from remote
-    --push        Push committed changes to remote
+    --pull        Pull changes from remote (for maintained packages)
+		--push        Push committed changes to remote (for maintained packages)
+		--no-save     Do not update package.json with updated dependencies versions
     --help,   -h  Show this message
+    --global, -g  Install package globall
+
+o npm-cross-link (in package dir)
+
+		Ensure all project dependencies are up to date, and are setup completely in their folder.
+		Global installations (or local project folders in case of maintained package) are linked
+		if dependency references latest version.
+		Update package.json dependencies section with updated version ranges
+
+o npm-cross-link [<@scope>/]<name>[@<version range>]
+
+		Install dependency (link if references latest version).
+		Update version range in package.json.
+
+o npm-cross-link -g [<@scope>/]<name>	
+
+		Install latest version of a package globally. If it's a maintained package, it's setup
+		(or updated if needed) in npm packages folder.
 
 `;
 
