@@ -11,7 +11,7 @@ require("log-node")({ defaultNamespace: "npm-cross-link" });
 const meta = require("../package");
 
 const argv = require("minimist")(process.argv.slice(2), {
-	boolean: ["global", "help", "pull", "push", "save", "version"],
+	boolean: ["global", "help", "pull", "push", "save", "save-dev", "save-optional", "version"],
 	alias: { global: "g", help: "h", version: "v" },
 	default: { save: true }
 });
@@ -46,6 +46,11 @@ o npm-cross-link [<@scope>/]<name>[@<version range>]
 		Install dependency (link if references latest version).
 		Update version range in package.json.
 
+		Additonal options:
+
+				--save-dev       Save new dependency in devDependencies
+				--save-optional  Save new dependency in optionalDependencies
+
 o npm-cross-link -g [<@scope>/]<name>	
 
 		Install latest version of a package globally. If it's a maintained package, it's setup
@@ -67,5 +72,10 @@ require("../lib/private/cli")("install", packageName, {
 	global: argv.global,
 	pull: argv.pull,
 	push: argv.push,
-	noSave: !argv.save
+	noSave: !argv.save,
+	saveMode: (() => {
+		if (argv["save-dev"]) return "dev";
+		if (argv["save-optional"]) return "optional";
+		return "prod";
+	})()
 });
