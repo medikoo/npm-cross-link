@@ -3,7 +3,7 @@
 
 # npm-cross-link
 
-## Automate 'npm link' across maintained packages and projects
+## Automate `npm link` across maintained packages and projects
 
 ```sh
 npm install -g npm-cross-link
@@ -11,7 +11,7 @@ npm install -g npm-cross-link
 
 ### Use case
 
-You maintain many npm packages and prefer to cross install them via `npm link`. Handling such setup manually can be time taking and error-porone.
+You maintain many npm packages and prefer to cross install them via `npm link`, handling such setup manually can be time taking and error-prone.
 
 `npm-cross-link` is the npm installer that ensures all latest versions of dependencies are linked to global folder
 and non latest versions of are installed on spot (but with its deep dependencies located in its own `node_modules)
@@ -52,7 +52,7 @@ Installs or updates all package dependencies.
 
 #### `npm-cross-link [...options] [<@scope>/]<name>[@<version range>]` (in package dir)
 
-Installs or updates specified dependency, at specified version. If version is not specified then one from `package.json` or latest is used.
+Installs or updates specified dependency, at specified version. If version is not specified then one from `package.json` or _latest_ is assumed.
 
 #### `npm-cross-link -g [...options] [<@scope>/]<name>`
 
@@ -68,7 +68,7 @@ Updates all packages that are already installed at packages folder.
 -   `--push` - For all updated packages push eventually committed changes to remote
 -   `--no-save` - (only non global installations) Do not save updated dependencies versions to `package.json` (by default they're updated)
 -   `--save-dev` - (only for single dependency install) Force to store updated version in `devDependencies` if package is not already listed in `package.json`
--   `--save-dev` - (only for single dependency install) Force to store updated version in `optionalDependencies` if package is not already listed in `package.json`
+-   `--save-optional` - (only for single dependency install) Force to store updated version in `optionalDependencies` if package is not already listed in `package.json`
 
 ### Configuration
 
