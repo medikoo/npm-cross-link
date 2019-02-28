@@ -2,9 +2,7 @@
 
 "use strict";
 
-Error.stackTraceLimit = Infinity;
-
-process.on("unhandledRejection", reason => { throw reason; });
+require("essentials");
 
 require("log-node")({ defaultNamespace: "npm-cross-link" });
 
