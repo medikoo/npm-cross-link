@@ -32,7 +32,7 @@ common-options: [-h | --help] [--pull] [--push]
 		--push        Push committed changes to remote (for maintained packages)
 		--no-save     Do not update package.json with updated dependencies versions
     --help,   -h  Show this message
-    --global, -g  Install package globall
+    --global, -g  Install package globally
 
 o npm-cross-link (in package dir)
 
