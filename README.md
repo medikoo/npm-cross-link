@@ -3,7 +3,7 @@
 
 # npm-cross-link
 
-## npm packages cross linker (an installer for packages developer)
+## Automate 'npm link' across maintained packages and projects
 
 ```sh
 npm install -g npm-cross-link
@@ -11,19 +11,24 @@ npm install -g npm-cross-link
 
 ### Use case
 
-You maintain many npm packages which depend on each other. When developing locally you prefer to have them setup as git repositories that have dependencies npm linked to their repositories.
+You maintain many npm packages and prefer to cross install them via `npm link`. Handling such setup manually can be time taking and error-porone.
+
+`npm-cross-link` is the npm installer that ensures all latest versions of dependencies are linked to global folder
+and non latest versions of are installed on spot (but with its deep dependencies located in its own `node_modules)
+
+For maintained packages, it ensures it's local installation is linked into global folder
 
 ### How it works?
 
 Within [configuration](#configuration) you choose a folder (defaults to `~/npm-packages`) where maintained packages are placed, and predefine (at `packagesMeta`) a _package name_ to _repository url_ mappings of packages you maintain.
 
-When running `npm-cross-link <package-name>` following steps are pursued:
+When running `npm-cross-link -g <package-name>` for maintained package, or when installing a maintained package as a dependency, following steps are pursued:
 
-1. If repository is not setup, it is cloned into corresponding folder. Otherwise optionally new changes from remote can be pulled (`--pull`) and committed changes pushed (`--push`)
+1. If package repository is not setup, it is cloned into corresponding folder (`~/npm-packages/<package-name>` by default). Otherwise optionally new changes from remote can be pulled (`--pull`) and committed changes pushed (`--push`)
 2. All maintained project dependencies (also `devDependencies` and eventual `optionalDependencies`) are installed according to same flow.
 
     - Not maintained dependencies (not found in `packagesMeta`) if at latest version are ensured to be installed globally and npm linked to global npm folder. Otherwise they're installed on spot but with its dependencies contained in dependency folder (not top level node_modules).
-    - Maintained project dependencies (those found in `packagesMeta`) if referenced version matches local, are simply cross linked linked, otherwise they're istalled on spot (with its dependencies contained in dependency folder, not top level node_modules).
+    - Maintained project dependencies (those found in `packagesMeta`) if referenced version matches local, are simply cross linked, otherwise they're istalled on spot (with its dependencies contained in dependency folder, not top level node_modules).
 
 3. Package is ensured to be linked to global npm folder
 
@@ -41,31 +46,29 @@ To avoid confusion it's better to rely on global installation. Still [nvm](https
 
 ### CLI
 
-#### `npm-cross-link [...options] <package-name>`
+#### `npm-cross-link [...options]` (in package dir)
 
-Installs or updates indicated package (with its dependencies) at packages folder.
+Installs or updates all package dependencies.
 
-_Note: This command doesn't interfere in any way with eventual project at current working directory._
+#### `npm-cross-link [...options] [<@scope>/]<name>[@<version range>]` (in package dir)
 
-##### Supported options:
+Installs or updates specified dependency, at specified version. If version is not specified then one from `package.json` or latest is used.
 
--   `--pull` - Pull eventual new updates from remote
--   `--push` - For all updated packages push eventually committed changes to remote
+#### `npm-cross-link -g [...options] [<@scope>/]<name>`
 
-#### `npm-cross-link [...options]`
-
-Installs and links all maintained dependencies of a project found at current working directory.  
-Installation rules are same as for package install. Maintained packages are linked to its location, not maintained are linked to global npm folder (unless they do not refer to latest version, as then they're installed on spot)
-
-Supports same options as `npm-cross-link`
+Installs or updates given package globally. Due to how `npm-cross-link` works it's only latest versions of packages that can be globally linked.
 
 #### `npm-cross-link-update-all [...options]`
 
 Updates all packages that are already installed at packages folder.
 
-_Note: This command doesn't interfere in any way with eventual project at current working directory._
+##### General options:
 
-Supports same options as `npm-cross-link`
+-   `--pull` - Pull eventual new updates from remote
+-   `--push` - For all updated packages push eventually committed changes to remote
+-   `--no-save` - (only non global installations) Do not save updated dependencies versions to `package.json` (by default they're updated)
+-   `--save-dev` - (only for single dependency install) Force to store updated version in `devDependencies` if package is not already listed in `package.json`
+-   `--save-dev` - (only for single dependency install) Force to store updated version in `optionalDependencies` if package is not already listed in `package.json`
 
 ### Configuration
 
@@ -86,12 +89,8 @@ Required. Meta data of each maintained package. At this point just `repoUrl` is 
 ```json
 {
 	"packagesMeta": {
-		"es6-symbol": {
-			"repoUrl": "git@github.com:medikoo/es6-symbol.git"
-		},
-		"memoizee": {
-			"repoUrl": "git@github.com:medikoo/memoizee.git"
-		}
+		"es6-symbol": { "repoUrl": "git@github.com:medikoo/es6-symbol.git" },
+		"memoizee": { "repoUrl": "git@github.com:medikoo/memoizee.git" }
 	}
 }
 ```
