@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+# [6.2.0](https://github.com/medikoo/npm-cross-link/compare/v6.1.0...v6.2.0) (2019-03-01)
+
+### Features
+
+-   improve log message ([83734f1](https://github.com/medikoo/npm-cross-link/commit/83734f1))
+-   improve updateable version detection ([1a62756](https://github.com/medikoo/npm-cross-link/commit/1a62756))
+
 # [6.1.0](https://github.com/medikoo/npm-cross-link/compare/v6.0.0...v6.1.0) (2019-02-28)
 
 ### Bug Fixes
