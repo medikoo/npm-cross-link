@@ -21,9 +21,9 @@ const usage = `npm-cross-link v${ meta.version }
 
 Usage:
 
-npm-cross-link                                         (in package dir)
-npm-cross-link    [<@scope>/]<name>[@<version range>]  (in package dir)
-npm-cross-link -g [<@scope>/]<name>
+npm-cross-link                                            (in package dir)
+npm-cross-link    ...[<@scope>/]<name>[@<version range>]  (in package dir)
+npm-cross-link -g ...[<@scope>/]<name>
 
 common-options: [-h | --help] [--pull] [--push]
 
@@ -40,9 +40,9 @@ o npm-cross-link (in package dir)
 		if dependency references latest version.
 		Update package.json dependencies section with updated version ranges
 
-o npm-cross-link [<@scope>/]<name>[@<version range>]
+o npm-cross-link ...[<@scope>/]<name>[@<version range>]
 
-		Install dependency (link if references latest version).
+		Install given dependencies (link if reference latest version).
 		Update version range in package.json.
 
 		Additonal options:
@@ -50,10 +50,10 @@ o npm-cross-link [<@scope>/]<name>[@<version range>]
 				--save-dev       Save new dependency in devDependencies
 				--save-optional  Save new dependency in optionalDependencies
 
-o npm-cross-link -g [<@scope>/]<name>	
+o npm-cross-link -g ...[<@scope>/]<name>	
 
-		Install latest version of a package globally. If it's a maintained package, it's setup
-		(or updated if needed) in npm packages folder.
+		Install latest versions of given packages globally. Maintained packages, are setup
+		(or updated if needed) in user packages (~/.npm-packages by default) folder.
 
 `;
 

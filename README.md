@@ -50,19 +50,19 @@ To avoid confusion it's better to rely on global installation. Still [nvm](https
 
 #### `npm-cross-link [...options]` (in package dir)
 
-Installs or updates all package dependencies.
+Installs or updates all project dependencies.
 
-#### `npm-cross-link [...options] [<@scope>/]<name>[@<version range>]` (in package dir)
+#### `npm-cross-link [...options] ...[<@scope>/]<name>[@<version range>]` (in package dir)
 
-Installs or updates specified dependency, at specified version. If version is not specified then one from `package.json` or _latest_ is assumed.
+Installs or updates given project dependencies. If dependency version is not specified then one from `package.json` or _latest_ is assumed.
 
-#### `npm-cross-link -g [...options] [<@scope>/]<name>`
+#### `npm-cross-link -g [...options] ...[<@scope>/]<name>`
 
-Installs or updates given package globally. Due to how `npm-cross-link` works it's only latest versions of packages that can be globally linked.
+Installs or updates given packages globally. Due to `npm-cross-link` installation rules it's only latest versions of packages that are globally linked.
 
 #### `npm-cross-link-update-all [...options]`
 
-Updates all packages that are already installed at packages folder.
+Updates all are already installed maintained packages
 
 ##### General options:
 
