@@ -8,7 +8,7 @@
   },
   "repository": "medikoo/npm-cross-link",
   "dependencies": {
-    "child-process-ext": "2",
+    "child-process-ext": "^2.0.0",
     "cjs-module": "^1.5.0",
     "cli-color": "^1.4.0",
     "cli-progress-footer": "^1.1.1",
@@ -29,11 +29,11 @@
     "validate-npm-package-name": "^3.0.0"
   },
   "devDependencies": {
-    "eslint": "^5.14.1",
-    "eslint-config-medikoo": "2",
+    "eslint": "^5.15.1",
+    "eslint-config-medikoo": "^2.1.1",
     "git-list-updated": "^1.1.2",
     "husky": "^1.3.1",
-    "lint-staged": "^8.1.4",
+    "lint-staged": "^8.1.5",
     "prettier-elastic": "^1.16.4"
   },
   "husky": {
