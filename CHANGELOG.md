@@ -2,6 +2,31 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+# [7.0.0](https://github.com/medikoo/npm-cross-link/compare/v6.2.0...v7.0.0) (2019-03-05)
+
+### Bug Fixes
+
+-   do not crash for non existing remotes ([a47a216](https://github.com/medikoo/npm-cross-link/commit/a47a216))
+
+### Code Refactoring
+
+-   pave path for installDependencies feature ([1d3a7db](https://github.com/medikoo/npm-cross-link/commit/1d3a7db))
+-   rename module ([78ec6ad](https://github.com/medikoo/npm-cross-link/commit/78ec6ad))
+
+### Features
+
+-   improve log message ([8f26854](https://github.com/medikoo/npm-cross-link/commit/8f26854))
+-   improve logging ([936ee4e](https://github.com/medikoo/npm-cross-link/commit/936ee4e))
+-   support install of multiple dependencies ([75ae8ef](https://github.com/medikoo/npm-cross-link/commit/75ae8ef))
+-   support multiple global install ([e1b1284](https://github.com/medikoo/npm-cross-link/commit/e1b1284))
+
+### BREAKING CHANGES
+
+-   install-maintaned-package.js was removed in favor of
+    install-packages-globally.js
+-   install-package-globally.js got replaced by install-packages-globally.js
+-   install-dependency.js was replaced with install-dependencies.js
+
 # [6.2.0](https://github.com/medikoo/npm-cross-link/compare/v6.1.0...v6.2.0) (2019-03-01)
 
 ### Features
