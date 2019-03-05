@@ -61,6 +61,7 @@
     "overrides": [
       {
         "files": [
+          "lib/private/install-dependencies/index.js",
           "lib/private/install-maintained-package/index.js",
           "lib/private/setup-dependencies/index.js",
           "lib/private/update-all.js"

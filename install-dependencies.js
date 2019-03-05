@@ -1,39 +1,40 @@
 "use strict";
 
-const toPlainObject            = require("es5-ext/object/normalize-options")
-    , ensureString             = require("es5-ext/object/validate-stringifiable-value")
-    , { resolve }              = require("path")
-    , ensurePackageName        = require("./lib/ensure-package-name")
-    , NpmCrossLinkError        = require("./lib/npm-cross-link-error")
-    , ensureConfiguration      = require("./lib/private/ensure-user-configuration")
-    , createProgressData       = require("./lib/private/create-progress-data")
-    , installDependencies      = require("./lib/private/install-dependencies")
-    , getPackageJson           = require("./lib/private/get-package-json")
-    , resolveDependencyContext = require("./lib/private/resolve-dependency-context");
+const toPlainObject       = require("es5-ext/object/normalize-options")
+    , ensureObject        = require("es5-ext/object/valid-object")
+    , ensureString        = require("es5-ext/object/validate-stringifiable-value")
+    , { resolve }         = require("path")
+    , ensurePackageName   = require("./lib/ensure-package-name")
+    , NpmCrossLinkError   = require("./lib/npm-cross-link-error")
+    , ensureConfiguration = require("./lib/private/ensure-user-configuration")
+    , createProgressData  = require("./lib/private/create-progress-data")
+    , installDependencies = require("./lib/private/install-dependencies")
+    , getPackageJson      = require("./lib/private/get-package-json");
 
-module.exports = (path, dependencyName, userConfiguration, inputOptions = {}) => {
+module.exports = (path, dependencyNames, userConfiguration, inputOptions = {}) => {
 	path = resolve(ensureString(path));
-	dependencyName = ensureString(dependencyName);
-	let dependencyVersionRange;
-	if (dependencyName.slice(1).includes("@")) {
-		dependencyVersionRange = dependencyName.slice(dependencyName.lastIndexOf("@") + 1);
-		dependencyName = dependencyName.slice(0, dependencyName.lastIndexOf("@"));
-	}
-	dependencyName = ensurePackageName(dependencyName);
+	const dependenciesData = Array.from(ensureObject(dependencyNames)).map(dependencyName => {
+		dependencyName = ensureString(dependencyName);
+		if (dependencyName.slice(1).includes("@")) {
+			return {
+				name: ensurePackageName(dependencyName.slice(0, dependencyName.lastIndexOf("@"))),
+				versionRange: dependencyName.slice(dependencyName.lastIndexOf("@") + 1)
+			};
+		}
+		return { name: ensurePackageName(dependencyName) };
+	});
 	const progressData = createProgressData();
-	const packageContext = { path };
-	packageContext.packageJson = getPackageJson(path);
-	if (!packageContext.packageJson) {
+	const dependentContext = { path };
+	dependentContext.packageJson = getPackageJson(path);
+	if (!dependentContext.packageJson) {
 		return Promise.reject(new NpmCrossLinkError(`Could not find a package.json at ${ path }`));
 	}
-	progressData.topPackageName = packageContext.name = packageContext.packageJson.name || "<main>";
+	progressData.topPackageName = dependentContext.name =
+		dependentContext.packageJson.name || "<main>";
 	userConfiguration = ensureConfiguration(userConfiguration);
-	const dependencyContext = resolveDependencyContext(
-		packageContext, dependencyName, userConfiguration
-	);
-	if (dependencyVersionRange) dependencyContext.versionRange = dependencyVersionRange;
 	const promise = installDependencies(
-		dependencyContext, userConfiguration, toPlainObject(inputOptions), progressData
+		dependentContext, dependenciesData, userConfiguration, toPlainObject(inputOptions),
+		progressData
 	);
 	promise.progressData = progressData;
 	return promise;

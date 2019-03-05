@@ -15,7 +15,7 @@ const argv = require("minimist")(process.argv.slice(2), {
 	default: { save: true }
 });
 
-const [packageName] = argv._;
+const packageNames = argv._;
 
 const usage = `npm-cross-link v${ meta.version }
 
@@ -67,7 +67,7 @@ if (argv.version) {
 	return;
 }
 
-require("../lib/private/cli")("install", packageName, {
+require("../lib/private/cli")("install", packageNames, {
 	global: argv.global,
 	pull: argv.pull,
 	push: argv.push,
