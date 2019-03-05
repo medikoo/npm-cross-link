@@ -32,7 +32,9 @@ When running `npm-cross-link -g <package-name>` for maintained package, or when 
 
 3. Package is ensured to be linked to global npm folder
 
-All important events and findings are communicated via logs (level of output can be fine tuned via [LOG_LEVEL](https://github.com/medikoo/log/#log_level) env setting)
+All important events and findings are communicated via logs (level of output can be fine tuned via [LOG_LEVEL](https://github.com/medikoo/log/#log_level) env setting).
+
+As each dependency is installed individually (and maintained packages are being installed recursively), the first install may appear slower from regular`npm` or `yarn` installs. Still it doesn't affect all further installs.
 
 #### npm resolution
 
