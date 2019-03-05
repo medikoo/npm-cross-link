@@ -7,7 +7,7 @@ const toPlainObject            = require("es5-ext/object/normalize-options")
     , NpmCrossLinkError        = require("./lib/npm-cross-link-error")
     , ensureConfiguration      = require("./lib/private/ensure-user-configuration")
     , createProgressData       = require("./lib/private/create-progress-data")
-    , installDependency        = require("./lib/private/install-dependency")
+    , installDependencies      = require("./lib/private/install-dependencies")
     , getPackageJson           = require("./lib/private/get-package-json")
     , resolveDependencyContext = require("./lib/private/resolve-dependency-context");
 
@@ -32,7 +32,7 @@ module.exports = (path, dependencyName, userConfiguration, inputOptions = {}) =>
 		packageContext, dependencyName, userConfiguration
 	);
 	if (dependencyVersionRange) dependencyContext.versionRange = dependencyVersionRange;
-	const promise = installDependency(
+	const promise = installDependencies(
 		dependencyContext, userConfiguration, toPlainObject(inputOptions), progressData
 	);
 	promise.progressData = progressData;
