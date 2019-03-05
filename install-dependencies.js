@@ -13,7 +13,7 @@ const toPlainObject       = require("es5-ext/object/normalize-options")
 
 module.exports = (path, dependencyNames, userConfiguration, inputOptions = {}) => {
 	path = resolve(ensureString(path));
-	const dependenciesData = Array.from(ensureObject(dependencyNames)).map(dependencyName => {
+	const dependenciesData = Array.from(ensureObject(dependencyNames), dependencyName => {
 		dependencyName = ensureString(dependencyName);
 		if (dependencyName.slice(1).includes("@")) {
 			return {
