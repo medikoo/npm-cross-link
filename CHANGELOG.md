@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+# [7.2.0](https://github.com/medikoo/npm-cross-link/compare/v7.1.0...v7.2.0) (2019-03-06)
+
+### Bug Fixes
+
+-   unify log messages ([961116a](https://github.com/medikoo/npm-cross-link/commit/961116a))
+
+### Features
+
+-   support target in githubRepo notation ([d0ab097](https://github.com/medikoo/npm-cross-link/commit/d0ab097))
+
 # [7.1.0](https://github.com/medikoo/npm-cross-link/compare/v7.0.2...v7.1.0) (2019-03-06)
 
 ### Features
