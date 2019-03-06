@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [7.0.2](https://github.com/medikoo/npm-cross-link/compare/v7.0.1...v7.0.2) (2019-03-06)
+
+### Bug Fixes
+
+-   fix package.json whitespace detection ([b4c9f4d](https://github.com/medikoo/npm-cross-link/commit/b4c9f4d))
+
 ## [7.0.1](https://github.com/medikoo/npm-cross-link/compare/v7.0.0...v7.0.1) (2019-03-05)
 
 ### Bug Fixes
