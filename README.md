@@ -52,7 +52,7 @@ All subdependencies of project dependencies are installed within dependencies `n
 
 npm since early days ensured that in such scenarios `C` is installed top level (so it's shared among `A` and `B`), npm-cross-link doesn't ensure that.
 
-This shouldn't be a problem for most of packages. Still there are some packages for which having duplicate instances in environment may turn breaking or come with side effects, and as there's no practice being promoted to handle such scenarios, it's rare for those packages to provide any recovery logic.
+This shouldn't be a problem for most of packages. Still there are some packages for which having duplicate instances in environment may turn breaking or come with side effects, and as there's no practice being promoted to handle such scenarios, it's rare for those packages to come with any recovery logic.
 
 ### CLI
 
