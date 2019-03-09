@@ -46,6 +46,14 @@ However when relying on [nvm](https://github.com/creationix/nvm), different npm 
 
 To avoid confusion it's better to rely on global installation. Still [nvm](https://github.com/creationix/nvm) is great for checking this project out (as then globally installed packages are not affected).
 
+#### Limitations
+
+All subdependencies of project dependencies are installed within dependencies `node_modules` folders. It means that if e.g. dependency `A` and dependency `B`, depend on same version of dependency `C`, (and they're not maintained packages, so they're either linked to global installation or installed on spot) they will use different installations of `C`.
+
+npm since early days ensured that in such scenarios `C` is installed top level (so it's shared among `A` and `B`), npm-cross-link doesn't ensure that.
+
+This shouldn't be a problem for most of packages. Still there are some packages for which having duplicate instances in environment may turn breaking or come with side effects, and as there's no practice being promoted to handle such scenarios, it's rare for those packages to provide any recovery logic.
+
 ### CLI
 
 #### `npm-cross-link [...options]` (in package dir)
