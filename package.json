@@ -1,82 +1,82 @@
 {
-  "name": "npm-cross-link",
-  "version": "7.2.0",
-  "author": "Mariusz Nowak <medyk@medikoo.com> (http://www.medikoo.com/)",
-  "bin": {
-    "npm-cross-link": "./bin/npm-cross-link.js",
-    "npm-cross-link-update-all": "./bin/npm-cross-link-update-all.js"
-  },
-  "repository": "medikoo/npm-cross-link",
-  "dependencies": {
-    "child-process-ext": "^2.0.0",
-    "cjs-module": "^1.5.0",
-    "cli-color": "^1.4.0",
-    "cli-progress-footer": "^1.1.1",
-    "cli-sprintf-format": "^1.1.0",
-    "es5-ext": "^0.10.48",
-    "essentials": "^1.0.0",
-    "event-emitter": "^0.3.5",
-    "fs2": "^0.3.4",
-    "got": "^9.6.0",
-    "log": "^3.2.0",
-    "log-node": "^3.2.1",
-    "memoizee": "^0.4.14",
-    "minimist": "^1.2.0",
-    "npm": "^6.8.0",
-    "semver": "^5.6.0",
-    "tar": "^4.4.8",
-    "timers-ext": "^0.1.7",
-    "validate-npm-package-name": "^3.0.0"
-  },
-  "devDependencies": {
-    "eslint": "^5.15.1",
-    "eslint-config-medikoo": "^2.1.1",
-    "git-list-updated": "^1.1.2",
-    "husky": "^1.3.1",
-    "lint-staged": "^8.1.5",
-    "prettier-elastic": "^1.16.4"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
-  },
-  "lint-staged": {
-    "*.js": [
-      "eslint"
-    ],
-    "*.{css,html,js,json,md,yaml,yml}": [
-      "prettier -c"
-    ]
-  },
-  "eslintConfig": {
-    "extends": "medikoo",
-    "root": true,
-    "env": {
-      "node": true
-    },
-    "parserOptions": {
-      "ecmaVersion": 2018
-    },
-    "overrides": [
-      {
-        "files": [
-          "lib/private/install-dependencies/index.js",
-          "lib/private/install-maintained-package/index.js",
-          "lib/private/setup-dependencies/index.js",
-          "lib/private/update-all.js"
-        ],
-        "rules": {
-          "no-await-in-loop": "off"
-        }
-      }
-    ]
-  },
-  "scripts": {
-    "lint": "eslint --ignore-path=.gitignore .",
-    "lint-updated": "pipe-git-updated --ext=js -- eslint --ignore-pattern '!*'",
-    "prettier-check-updated": "pipe-git-updated --ext=css --ext=html --ext=js --ext=json --ext=md --ext=yaml --ext=yml -- prettier -c",
-    "prettify": "prettier --write --ignore-path .gitignore '**/*.{css,html,js,json,md,yaml,yml}'"
-  },
-  "license": "ISC"
+	"name": "npm-cross-link",
+	"version": "7.2.0",
+	"author": "Mariusz Nowak <medyk@medikoo.com> (http://www.medikoo.com/)",
+	"bin": {
+		"npm-cross-link": "./bin/npm-cross-link.js",
+		"npm-cross-link-update-all": "./bin/npm-cross-link-update-all.js"
+	},
+	"repository": "medikoo/npm-cross-link",
+	"dependencies": {
+		"child-process-ext": "^2.0.0",
+		"cjs-module": "^1.5.0",
+		"cli-color": "^1.4.0",
+		"cli-progress-footer": "^1.1.1",
+		"cli-sprintf-format": "^1.1.0",
+		"es5-ext": "^0.10.48",
+		"essentials": "^1.0.0",
+		"event-emitter": "^0.3.5",
+		"fs2": "^0.3.4",
+		"got": "^9.6.0",
+		"log": "^3.2.0",
+		"log-node": "^3.2.1",
+		"memoizee": "^0.4.14",
+		"minimist": "^1.2.0",
+		"npm": "^6.8.0",
+		"semver": "^5.6.0",
+		"tar": "^4.4.8",
+		"timers-ext": "^0.1.7",
+		"validate-npm-package-name": "^3.0.0"
+	},
+	"devDependencies": {
+		"eslint": "^5.15.1",
+		"eslint-config-medikoo": "^2.1.1",
+		"git-list-updated": "^1.1.2",
+		"husky": "^1.3.1",
+		"lint-staged": "^8.1.5",
+		"prettier-elastic": "^1.16.4"
+	},
+	"husky": {
+		"hooks": {
+			"pre-commit": "lint-staged"
+		}
+	},
+	"lint-staged": {
+		"*.js": [
+			"eslint"
+		],
+		"*.{css,html,js,json,md,yaml,yml}": [
+			"prettier -c"
+		]
+	},
+	"eslintConfig": {
+		"extends": "medikoo",
+		"root": true,
+		"env": {
+			"node": true
+		},
+		"parserOptions": {
+			"ecmaVersion": 2018
+		},
+		"overrides": [
+			{
+				"files": [
+					"lib/private/install-dependencies/index.js",
+					"lib/private/install-maintained-package/index.js",
+					"lib/private/setup-dependencies/index.js",
+					"lib/private/update-all.js"
+				],
+				"rules": {
+					"no-await-in-loop": "off"
+				}
+			}
+		]
+	},
+	"scripts": {
+		"lint": "eslint --ignore-path=.gitignore .",
+		"lint-updated": "pipe-git-updated --ext=js -- eslint --ignore-pattern '!*'",
+		"prettier-check-updated": "pipe-git-updated --ext=css --ext=html --ext=js --ext=json --ext=md --ext=yaml --ext=yml -- prettier -c",
+		"prettify": "prettier --write --ignore-path .gitignore '**/*.{css,html,js,json,md,yaml,yml}'"
+	},
+	"license": "ISC"
 }
