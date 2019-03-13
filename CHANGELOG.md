@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+# [7.3.0](https://github.com/medikoo/npm-cross-link/compare/v7.2.0...v7.3.0) (2019-03-13)
+
+### Features
+
+-   intelligent new version range resolution ([de9c213](https://github.com/medikoo/npm-cross-link/commit/de9c213))
+-   support automatic update for ~ version range ([265a6b9](https://github.com/medikoo/npm-cross-link/commit/265a6b9))
+
 # [7.2.0](https://github.com/medikoo/npm-cross-link/compare/v7.1.0...v7.2.0) (2019-03-06)
 
 ### Bug Fixes
