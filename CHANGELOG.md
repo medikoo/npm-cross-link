@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+# [7.5.0](https://github.com/medikoo/npm-cross-link/compare/v7.4.0...v7.5.0) (2019-03-22)
+
+### Features
+
+-   validate wrong naming in package.json ([37d669e](https://github.com/medikoo/npm-cross-link/commit/37d669e))
+
 # [7.4.0](https://github.com/medikoo/npm-cross-link/compare/v7.3.1...v7.4.0) (2019-03-22)
 
 ### Features
