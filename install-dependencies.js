@@ -9,7 +9,7 @@ const toPlainObject       = require("es5-ext/object/normalize-options")
     , ensureConfiguration = require("./lib/private/ensure-user-configuration")
     , createProgressData  = require("./lib/private/create-progress-data")
     , installDependencies = require("./lib/private/install-dependencies")
-    , getPackageJson      = require("./lib/private/get-package-json");
+    , getPackageJson      = require("./lib/get-package-json");
 
 module.exports = (path, dependencyNames, userConfiguration, inputOptions = {}) => {
 	path = resolve(ensureString(path));
