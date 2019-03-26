@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+# [7.6.0](https://github.com/medikoo/npm-cross-link/compare/v7.5.1...v7.6.0) (2019-03-26)
+
+### Bug Fixes
+
+-   do not pursue link on name mismatch ([776dea4](https://github.com/medikoo/npm-cross-link/commit/776dea4))
+-   ensure proper installation ([5095b49](https://github.com/medikoo/npm-cross-link/commit/5095b49))
+-   fix error handling for non published packages ([ff9a5ca](https://github.com/medikoo/npm-cross-link/commit/ff9a5ca))
+
+### Features
+
+-   ensure cleanup on name mismatch ([61543a8](https://github.com/medikoo/npm-cross-link/commit/61543a8))
+
 ## [7.5.1](https://github.com/medikoo/npm-cross-link/compare/v7.5.0...v7.5.1) (2019-03-25)
 
 ### Bug Fixes
