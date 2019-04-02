@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [7.6.2](https://github.com/medikoo/npm-cross-link/compare/v7.6.1...v7.6.2) (2019-04-02)
+
+### Bug Fixes
+
+-   do not bump outside of local version ([a5049dc](https://github.com/medikoo/npm-cross-link/commit/a5049dc))
+-   ensure to target latest published on latest ([8bfb6c1](https://github.com/medikoo/npm-cross-link/commit/8bfb6c1))
+
 ## [7.6.1](https://github.com/medikoo/npm-cross-link/compare/v7.6.0...v7.6.1) (2019-04-02)
 
 ### Bug Fixes
