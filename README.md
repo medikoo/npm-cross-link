@@ -77,8 +77,9 @@ Updates all are already installed maintained packages
 -   `--pull` - Pull eventual new updates from remote
 -   `--push` - For all updated packages push eventually committed changes to remote
 -   `--no-save` - (only non global installations) Do not save updated dependencies versions to `package.json` (by default they're updated)
--   `--save-dev` - (only for single dependency install) Force to store updated version in `devDependencies` if package is not already listed in `package.json`
--   `--save-optional` - (only for single dependency install) Force to store updated version in `optionalDependencies` if package is not already listed in `package.json`
+-   `--save-dev` - (only for dependencies install) Force to store updated version in `devDependencies` section
+-   `--save-optional` - (only for dependencies install) Force to store updated version in `optionalDependencies` section
+-   `--save-prod` - (only for dependencies install) Force to store updated version in `dependencies` section
 
 ### Configuration
 
@@ -98,10 +99,10 @@ Required. Meta data of each maintained package. At this point just `repoUrl` is 
 
 ```json
 {
-	"packagesMeta": {
-		"es6-symbol": { "repoUrl": "git@github.com:medikoo/es6-symbol.git" },
-		"memoizee": { "repoUrl": "git@github.com:medikoo/memoizee.git" }
-	}
+    "packagesMeta": {
+        "es6-symbol": { "repoUrl": "git@github.com:medikoo/es6-symbol.git" },
+        "memoizee": { "repoUrl": "git@github.com:medikoo/memoizee.git" }
+    }
 }
 ```
 

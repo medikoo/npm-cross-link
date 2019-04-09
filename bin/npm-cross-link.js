@@ -10,7 +10,10 @@ require("log-node")({ defaultNamespace: "npm-cross-link" });
 const meta = require("../package");
 
 const argv = require("minimist")(process.argv.slice(2), {
-	boolean: ["global", "help", "pull", "push", "save", "save-dev", "save-optional", "version"],
+	boolean: [
+		"global", "help", "pull", "push", "save", "save-dev", "save-optional", "save-prod",
+		"version"
+	],
 	alias: { global: "g", help: "h", version: "v" },
 	default: { save: true }
 });
@@ -75,6 +78,7 @@ require("../lib/private/cli")("install", packageNames, {
 	saveMode: (() => {
 		if (argv["save-dev"]) return "dev";
 		if (argv["save-optional"]) return "optional";
-		return "prod";
+		if (argv["save-prod"]) return "prod";
+		return "as-is-or-prod";
 	})()
 });
