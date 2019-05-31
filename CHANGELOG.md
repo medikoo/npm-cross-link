@@ -1,6 +1,13 @@
-# Change Log
+# Changelog
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
+
+### [7.7.3](https://github.com/medikoo/npm-cross-link/compare/v7.7.2...v7.7.3) (2019-05-31)
+
+### Bug Fixes
+
+- ensure to reread package.json after pull ([238cb5d](https://github.com/medikoo/npm-cross-link/commit/238cb5d))
+- recover from missing pkg.name ([7016c53](https://github.com/medikoo/npm-cross-link/commit/7016c53))
 
 ## [7.7.2](https://github.com/medikoo/npm-cross-link/compare/v7.7.1...v7.7.2) (2019-05-16)
 
