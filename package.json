@@ -23,18 +23,18 @@
 		"memoizee": "^0.4.14",
 		"minimist": "^1.2.0",
 		"npm": "^6.9.0",
-		"semver": "^6.1.1",
-		"tar": "^4.4.8",
+		"semver": "^6.1.2",
+		"tar": "^4.4.10",
 		"timers-ext": "^0.1.7",
 		"validate-npm-package-name": "^3.0.0"
 	},
 	"devDependencies": {
 		"eslint": "^5.16.0",
-		"eslint-config-medikoo": "^2.2.0",
-		"git-list-updated": "^1.1.2",
-		"husky": "^2.3.0",
-		"lint-staged": "^8.1.7",
-		"prettier-elastic": "^1.17.0"
+		"eslint-config-medikoo": "^2.4.0",
+		"git-list-updated": "^1.2.0",
+		"husky": "^2.5.0",
+		"lint-staged": "^8.2.1",
+		"prettier-elastic": "^1.18.2"
 	},
 	"husky": {
 		"hooks": {
