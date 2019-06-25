@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [7.7.4](https://github.com/medikoo/npm-cross-link/compare/v7.7.3...v7.7.4) (2019-06-25)
+
+### Bug Fixes
+
+- Ensure proper top name resolution in case of external installs ([80c8465](https://github.com/medikoo/npm-cross-link/commit/80c8465))
+- Fix mapping binaries in case of string 'bin' entry ([7138a14](https://github.com/medikoo/npm-cross-link/commit/7138a14))
+
 ### [7.7.3](https://github.com/medikoo/npm-cross-link/compare/v7.7.2...v7.7.3) (2019-05-31)
 
 ### Bug Fixes
