@@ -53,7 +53,7 @@ o npm-cross-link ...[<@scope>/]<name>[@<version range>]
 				--save-dev       Save new dependency in devDependencies
 				--save-optional  Save new dependency in optionalDependencies
 
-o npm-cross-link -g ...[<@scope>/]<name>	
+o npm-cross-link -g ...[<@scope>/]<name>
 
 		Install latest versions of given packages globally. Maintained packages, are setup
 		(or updated if needed) in user packages (~/.npm-packages by default) folder.
