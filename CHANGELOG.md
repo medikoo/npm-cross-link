@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [7.8.0](https://github.com/medikoo/npm-cross-link/compare/v7.7.4...v7.8.0) (2019-07-02)
+
+### Bug Fixes
+
+- Do not attempt pull or push on diverged state ([481ba58](https://github.com/medikoo/npm-cross-link/commit/481ba58))
+
+### Features
+
+- Do not crash on unclean repos in pull requests ([2773e2f](https://github.com/medikoo/npm-cross-link/commit/2773e2f))
+
 ### [7.7.4](https://github.com/medikoo/npm-cross-link/compare/v7.7.3...v7.7.4) (2019-06-25)
 
 ### Bug Fixes
