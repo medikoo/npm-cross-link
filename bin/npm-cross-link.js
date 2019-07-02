@@ -50,8 +50,9 @@ o npm-cross-link ...[<@scope>/]<name>[@<version range>]
 
 		Additonal options:
 
-				--save-dev       Save new dependency in devDependencies
-				--save-optional  Save new dependency in optionalDependencies
+				--save-dev       Save dependency in devDependencies
+				--save-optional  Save dependency in optionalDependencies
+				--save-prod      Save dependency in dependencies
 
 o npm-cross-link -g ...[<@scope>/]<name>
 
