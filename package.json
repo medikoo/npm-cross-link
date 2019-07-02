@@ -22,8 +22,8 @@
 		"log-node": "^7.0.0",
 		"memoizee": "^0.4.14",
 		"minimist": "^1.2.0",
-		"npm": "^6.9.0",
-		"semver": "^6.1.2",
+		"npm": "^6.9.2",
+		"semver": "^6.2.0",
 		"tar": "^4.4.10",
 		"timers-ext": "^0.1.7",
 		"validate-npm-package-name": "^3.0.0"
@@ -32,7 +32,7 @@
 		"eslint": "^6.0.1",
 		"eslint-config-medikoo": "^2.4.0",
 		"git-list-updated": "^1.2.0",
-		"husky": "^2.5.0",
+		"husky": "^2.7.0",
 		"lint-staged": "^8.2.1",
 		"prettier-elastic": "^1.18.2"
 	},
