@@ -27,8 +27,8 @@ When running `npm-cross-link -g <package-name>` for maintained package, or when 
 1. If package repository is not setup, it is cloned into corresponding folder (`~/npm-packages/<package-name>` by default). Otherwise optionally new changes from remote can be pulled (`--pull`) and committed changes pushed (`--push`)
 2. All maintained project dependencies (also `devDependencies` and eventual `optionalDependencies`) are installed/updated according to same flow.
 
-    - Not maintained dependencies (not found in `packagesMeta`) if at latest version are ensured to be installed globally and npm linked to global npm folder. Otherwise they're installed on spot but with its dependencies contained in dependency folder (not top level node_modules).
-    - Maintained project dependencies (those found in `packagesMeta`) if referenced version matches local, are simply cross linked, otherwise they're istalled on spot (with its dependencies contained in dependency folder, not top level node_modules).
+   - Not maintained dependencies (not found in `packagesMeta`) if at latest version are ensured to be installed globally and npm linked to global npm folder. Otherwise they're installed on spot but with its dependencies contained in dependency folder (not top level node_modules).
+   - Maintained project dependencies (those found in `packagesMeta`) if referenced version matches local, are simply cross linked, otherwise they're istalled on spot (with its dependencies contained in dependency folder, not top level node_modules).
 
 3. Package is ensured to be linked to global npm folder
 
@@ -74,12 +74,13 @@ Updates all are already installed maintained packages
 
 ##### General options:
 
--   `--pull` - Pull eventual new updates from remote
--   `--push` - For all updated packages push eventually committed changes to remote
--   `--no-save` - (only non global installations) Do not save updated dependencies versions to `package.json` (by default they're updated)
--   `--save-dev` - (only for dependencies install) Force to store updated version in `devDependencies` section
--   `--save-optional` - (only for dependencies install) Force to store updated version in `optionalDependencies` section
--   `--save-prod` - (only for dependencies install) Force to store updated version in `dependencies` section
+- `--pull` - Pull eventual new updates from remote
+- `--push` - For all updated packages push eventually committed changes to remote
+- `--bump-deps` - (only non global installations) Bump version ranges of dependencies in `package.json`
+- `--no-save` - (only for dependencies install) Do not save dependency to `package.json` (effective only if its not there yet)
+- `--save-dev` - (only for dependencies install) Force to store updated version in `devDependencies` section
+- `--save-optional` - (only for dependencies install) Force to store updated version in `optionalDependencies` section
+- `--save-prod` - (only for dependencies install) Force to store updated version in `dependencies` section
 
 ### Configuration
 
@@ -99,10 +100,10 @@ Required. Meta data of each maintained package. At this point just `repoUrl` is 
 
 ```json
 {
-    "packagesMeta": {
-        "es6-symbol": { "repoUrl": "git@github.com:medikoo/es6-symbol.git" },
-        "memoizee": { "repoUrl": "git@github.com:medikoo/memoizee.git" }
-    }
+  "packagesMeta": {
+    "es6-symbol": { "repoUrl": "git@github.com:medikoo/es6-symbol.git" },
+    "memoizee": { "repoUrl": "git@github.com:medikoo/memoizee.git" }
+  }
 }
 ```
 
@@ -116,9 +117,9 @@ Additional operation that should be done after successful package installation (
 
 Function is run with following arguments:
 
--   `packageContext` - All needed information about package that was just installed or updated
--   `userConfiguration` - User configuration as resolved and normalized from `~/.npm-cross-link`
--   `inputOptions` - CLI command options
+- `packageContext` - All needed information about package that was just installed or updated
+- `userConfiguration` - User configuration as resolved and normalized from `~/.npm-cross-link`
+- `inputOptions` - CLI command options
 
 #### `userDependencies`
 
