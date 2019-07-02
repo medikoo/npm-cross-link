@@ -11,8 +11,8 @@ const meta = require("../package");
 
 const argv = require("minimist")(process.argv.slice(2), {
 	boolean: [
-		"global", "help", "pull", "push", "save", "save-dev", "save-optional", "save-prod",
-		"version"
+		"bump-deps", "global", "help", "pull", "push", "save", "save-dev", "save-optional",
+		"save-prod", "version"
 	],
 	alias: { global: "g", help: "h", version: "v" },
 	default: { save: true }
@@ -32,7 +32,6 @@ common-options: [-h | --help] [--pull] [--push]
 
     --pull        Pull changes from remote (for maintained packages)
 		--push        Push committed changes to remote (for maintained packages)
-		--no-save     Do not update package.json with updated dependencies versions
     --help,   -h  Show this message
     --global, -g  Install package globally
 
@@ -43,6 +42,10 @@ o npm-cross-link (in package dir)
 		if dependency references latest version.
 		Update package.json dependencies section with updated version ranges
 
+		Additonal options:
+
+		    --bump-deps  Bump version ranges of dependencies in package.json
+
 o npm-cross-link ...[<@scope>/]<name>[@<version range>]
 
 		Install given dependencies (link if reference latest version).
@@ -50,6 +53,7 @@ o npm-cross-link ...[<@scope>/]<name>[@<version range>]
 
 		Additonal options:
 
+		    --no-save        Do not add dependency to package.json if it's not listed there
 				--save-dev       Save dependency in devDependencies
 				--save-optional  Save dependency in optionalDependencies
 				--save-prod      Save dependency in dependencies (default for new dependency)
@@ -72,6 +76,7 @@ if (argv.version) {
 }
 
 require("../lib/private/cli")("install", packageNames, {
+	bumpDeps: argv["bump-deps"],
 	global: argv.global,
 	pull: argv.pull,
 	push: argv.push,
