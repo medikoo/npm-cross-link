@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [7.9.0](https://github.com/medikoo/npm-cross-link/compare/v7.8.0...v7.9.0) (2019-07-02)
+
+### Features
+
+- 'bumpDeps' option, false by default ([5d3cc57](https://github.com/medikoo/npm-cross-link/commit/5d3cc57))
+
 ## [7.8.0](https://github.com/medikoo/npm-cross-link/compare/v7.7.4...v7.8.0) (2019-07-02)
 
 ### Bug Fixes

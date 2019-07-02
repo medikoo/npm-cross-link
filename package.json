@@ -1,6 +1,6 @@
 {
 	"name": "npm-cross-link",
-	"version": "7.8.0",
+	"version": "7.9.0",
 	"author": "Mariusz Nowak <medyk@medikoo.com> (http://www.medikoo.com/)",
 	"bin": {
 		"npm-cross-link": "./bin/npm-cross-link.js",
