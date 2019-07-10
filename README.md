@@ -130,3 +130,7 @@ Installer by default removes all dependencies not referenced in package `package
 [transpilation-image]: https://img.shields.io/badge/transpilation-free-brightgreen.svg
 [npm-image]: https://img.shields.io/npm/v/npm-cross-link.svg
 [npm-url]: https://www.npmjs.com/package/npm-cross-link
+
+#### `toBeCopiedDependencies`
+
+Optional. Eventual list of non maintained dependencies that in all cases should be copied into `node_modules` and not linked to global installation.
