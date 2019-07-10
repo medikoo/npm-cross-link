@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [7.10.0](https://github.com/medikoo/npm-cross-link/compare/v7.9.1...v7.10.0) (2019-07-10)
+
+### Bug Fixes
+
+- Ensure prepared externals binaries are executable ([5fab6a4](https://github.com/medikoo/npm-cross-link/commit/5fab6a4))
+
+### Features
+
+- toBeCopiedDependencies user configuration option ([df8a0b5](https://github.com/medikoo/npm-cross-link/commit/df8a0b5))
+
 ### [7.9.1](https://github.com/medikoo/npm-cross-link/compare/v7.9.0...v7.9.1) (2019-07-02)
 
 ### Bug Fixes
