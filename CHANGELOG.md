@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [7.11.0](https://github.com/medikoo/npm-cross-link/compare/v7.10.1...v7.11.0) (2019-11-20)
+
+### Bug Fixes
+
+- Fix handling of broken process initialization ([91a4099](https://github.com/medikoo/npm-cross-link/commit/91a4099))
+- Show non published version range info only when there's range ([1cddabb](https://github.com/medikoo/npm-cross-link/commit/1cddabb))
+
+### Features
+
+- Workaround npm install quirk ([ddc64c2](https://github.com/medikoo/npm-cross-link/commit/ddc64c2))
+
 ### [7.10.1](https://github.com/medikoo/npm-cross-link/compare/v7.10.0...v7.10.1) (2019-07-12)
 
 ### Bug Fixes
