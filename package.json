@@ -10,7 +10,7 @@
 	"dependencies": {
 		"child-process-ext": "^2.1.0",
 		"cjs-module": "^1.5.0",
-		"cli-color": "^1.4.0",
+		"cli-color": "^2.0.0",
 		"cli-progress-footer": "^1.1.1",
 		"cli-sprintf-format": "^1.1.0",
 		"es5-ext": "^0.10.52",
