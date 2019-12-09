@@ -78,9 +78,9 @@ Updates all are already installed maintained packages
 - `--push` - For all updated packages push eventually committed changes to remote
 - `--bump-deps` - (only non global installations) Bump version ranges of dependencies in `package.json`
 - `--no-save` - (only for dependencies install) Do not save dependency to `package.json` (effective only if its not there yet)
-- `--save-dev` - (only for dependencies install) Force to store updated version in `devDependencies` section
-- `--save-optional` - (only for dependencies install) Force to store updated version in `optionalDependencies` section
-- `--save-prod` - (only for dependencies install) Force to store updated version in `dependencies` section
+- `--dev` - (only for dependencies install) Force to store updated version in `devDependencies` section
+- `--optional` - (only for dependencies install) Force to store updated version in `optionalDependencies` section
+- `--prod` - (only for dependencies install) Force to store updated version in `dependencies` section
 
 ### Configuration
 

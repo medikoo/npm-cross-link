@@ -11,8 +11,7 @@ const meta = require("../package");
 
 const argv = require("minimist")(process.argv.slice(2), {
 	boolean: [
-		"bump-deps", "global", "help", "pull", "push", "save", "save-dev", "save-optional",
-		"save-prod", "version"
+		"bump-deps", "global", "help", "pull", "push", "save", "dev", "optional", "prod", "version"
 	],
 	alias: { global: "g", help: "h", version: "v" },
 	default: { save: true }
@@ -53,10 +52,10 @@ o npm-cross-link ...[<@scope>/]<name>[@<version range>]
 
 		Additonal options:
 
-		    --no-save        Do not add dependency to package.json if it's not listed there
-				--save-dev       Save dependency in devDependencies
-				--save-optional  Save dependency in optionalDependencies
-				--save-prod      Save dependency in dependencies (default for new dependency)
+		    --no-save   Do not add dependency to package.json if it's not listed there
+				--dev       Save dependency in devDependencies
+				--optional  Save dependency in optionalDependencies
+				--prod      Save dependency in dependencies (default for new dependency)
 
 o npm-cross-link -g ...[<@scope>/]<name>
 
@@ -82,9 +81,9 @@ require("../lib/private/cli")("install", packageNames, {
 	push: argv.push,
 	noSave: !argv.save,
 	saveMode: (() => {
-		if (argv["save-dev"]) return "dev";
-		if (argv["save-optional"]) return "optional";
-		if (argv["save-prod"]) return "prod";
+		if (argv.dev) return "dev";
+		if (argv.optional) return "optional";
+		if (argv.prod) return "prod";
 		return "as-is-or-prod";
 	})()
 });
