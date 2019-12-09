@@ -80,7 +80,7 @@ require("../lib/private/cli")("install", packageNames, {
 	pull: argv.pull,
 	push: argv.push,
 	noSave: !argv.save,
-	saveMode: (() => {
+	installMode: (() => {
 		if (argv.dev) return "dev";
 		if (argv.optional) return "optional";
 		if (argv.prod) return "prod";
