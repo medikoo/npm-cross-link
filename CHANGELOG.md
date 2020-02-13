@@ -2,7 +2,7 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
-## [8.0.0](https://github.com/medikoo/npm-cross-link/compare/v7.11.0...v8.0.0) (2020-02-13)
+## [8.0.0](https://github.com/medikoo/npm-cross-link/compare/v7.11.0...v8.0.0) (2020-02-14)
 
 ### ⚠ BREAKING CHANGES
 
