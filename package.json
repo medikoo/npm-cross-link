@@ -13,7 +13,7 @@
 		"cli-color": "^2.0.0",
 		"cli-progress-footer": "^1.1.1",
 		"cli-sprintf-format": "^1.1.0",
-		"es5-ext": "^0.10.52",
+		"es5-ext": "^0.10.53",
 		"essentials": "^1.1.1",
 		"event-emitter": "^0.3.5",
 		"fs2": "^0.3.7",
@@ -22,19 +22,19 @@
 		"log-node": "^7.0.0",
 		"memoizee": "^0.4.14",
 		"minimist": "^1.2.0",
-		"npm": "^6.13.1",
+		"npm": "^6.13.7",
 		"semver": "^6.3.0",
 		"tar": "^5.0.5",
 		"timers-ext": "^0.1.7",
 		"validate-npm-package-name": "^3.0.0"
 	},
 	"devDependencies": {
-		"eslint": "^6.6.0",
+		"eslint": "^6.8.0",
 		"eslint-config-medikoo": "^2.7.0",
 		"git-list-updated": "^1.2.1",
 		"husky": "^3.1.0",
-		"lint-staged": "^9.4.3",
-		"prettier-elastic": "^1.18.2"
+		"lint-staged": "^9.5.0",
+		"prettier-elastic": "^1.19.1"
 	},
 	"husky": {
 		"hooks": {
