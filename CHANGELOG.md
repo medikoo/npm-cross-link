@@ -2,6 +2,23 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [8.0.0](https://github.com/medikoo/npm-cross-link/compare/v7.11.0...v8.0.0) (2020-02-13)
+
+### ⚠ BREAKING CHANGES
+
+- Drop support for Node.js v8
+- `--save-dev`, `--save-prod` and `--save-optional` were removed.
+  In place of them `--dev`, `--prod` and `--optional` were introduced
+
+### Features
+
+- Install dev dependencies only for top package or on update all ([723de72](https://github.com/medikoo/npm-cross-link/commit/723de72f935bdfeef5d9786cd77be809c3fbc6fa))
+- Rename `--save-*` options to `--*` ([e6b8de3](https://github.com/medikoo/npm-cross-link/commit/e6b8de3354ed78ecc3afe74cba735902bcf9dc98))
+
+### Bug Fixes
+
+- Fix windows detection ([8b30496](https://github.com/medikoo/npm-cross-link/commit/8b304961cd391e6ab1c59892719ead941e000a4c))
+
 ## [7.11.0](https://github.com/medikoo/npm-cross-link/compare/v7.10.1...v7.11.0) (2019-11-20)
 
 ### Bug Fixes
