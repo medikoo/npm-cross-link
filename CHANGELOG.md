@@ -4,10 +4,9 @@ All notable changes to this project will be documented in this file. See [standa
 
 ### [8.0.1](https://github.com/medikoo/npm-cross-link/compare/v8.0.0...v8.0.1) (2020-02-19)
 
-
 ### Bug Fixes
 
-* Ensure to force `npm link` to avoid EEXIST errors ([1113e59](https://github.com/medikoo/npm-cross-link/commit/1113e59c595fb73ea6d26609c3babf8a19997826))
+- Ensure to force `npm link` to avoid EEXIST errors ([1113e59](https://github.com/medikoo/npm-cross-link/commit/1113e59c595fb73ea6d26609c3babf8a19997826))
 
 ## [8.0.0](https://github.com/medikoo/npm-cross-link/compare/v7.11.0...v8.0.0) (2020-02-14)
 
