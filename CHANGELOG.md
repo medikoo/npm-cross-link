@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [9.0.0](https://github.com/medikoo/npm-cross-link/compare/v8.0.1...v9.0.0) (2020-05-08)
+
+### ⚠ BREAKING CHANGES
+
+- Log level for outdated versions of deep dependencies was lowered to info
+- Log level for outdated versions of top level dependencies was lowered to notice
+
+### Features
+
+- Lower log level for outdated version range info ([d9a32d0](https://github.com/medikoo/npm-cross-link/commit/d9a32d0b8ea7bec496b14867e31054653b74e0c9))
+- Signal if maintained package is not at "latest" state ([3a6d7a3](https://github.com/medikoo/npm-cross-link/commit/3a6d7a355cfbb67d7131a9eae5c26f4c2ad28821))
+
 ### [8.0.1](https://github.com/medikoo/npm-cross-link/compare/v8.0.0...v8.0.1) (2020-02-19)
 
 ### Bug Fixes
