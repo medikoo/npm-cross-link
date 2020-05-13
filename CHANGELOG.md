@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [9.0.1](https://github.com/medikoo/npm-cross-link/compare/v9.0.0...v9.0.1) (2020-05-13)
+
+### Bug Fixes
+
+- Ensure to resolve package.json after package is cloned ([781f318](https://github.com/medikoo/npm-cross-link/commit/781f318a9d12d95fda3b8d315f1b48a2639bfacd))
+
 ## [9.0.0](https://github.com/medikoo/npm-cross-link/compare/v8.0.1...v9.0.0) (2020-05-08)
 
 ### ⚠ BREAKING CHANGES
