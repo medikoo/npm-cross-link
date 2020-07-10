@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [9.0.3](https://github.com/medikoo/npm-cross-link/compare/v9.0.2...v9.0.3) (2020-07-10)
+
+### Bug Fixes
+
+- Ensure to check coherency for non semver dependencies ([2d0cd55](https://github.com/medikoo/npm-cross-link/commit/2d0cd5530a274752fae267c93b415a9e15f9fdd7))
+- Fix linking of dependency binaries on Windows ([585deb0](https://github.com/medikoo/npm-cross-link/commit/585deb058b348acb8309a7353c2254ccf3f3a863))
+
 ### [9.0.2](https://github.com/medikoo/npm-cross-link/compare/v9.0.1...v9.0.2) (2020-05-13)
 
 ### Bug Fixes
