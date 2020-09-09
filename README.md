@@ -96,7 +96,7 @@ Optional (defaults to `~/npm-packages`). Folder at which maintained packages sho
 
 #### `packagesMeta`
 
-Required. Meta data of each maintained package. At this point just `repoUrl` is supported. Example form:
+Required. Meta data of each maintained package. Example form:
 
 ```json
 {
@@ -106,6 +106,16 @@ Required. Meta data of each maintained package. At this point just `repoUrl` is 
   }
 }
 ```
+
+Supported package meta properties:
+
+##### `repoUrl` (required)
+
+URL to git repository
+
+##### `path`
+
+If for some reason we plan to keep package folder at custom location (not at `${packagesPath}/${package.name}`), then via this option we can specify desired location
 
 #### `hooks`
 

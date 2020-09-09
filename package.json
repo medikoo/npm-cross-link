@@ -26,6 +26,7 @@
 		"semver": "^7.3.2",
 		"tar": "^6.0.2",
 		"timers-ext": "^0.1.7",
+		"type": "^2.1.0",
 		"validate-npm-package-name": "^3.0.0"
 	},
 	"devDependencies": {
