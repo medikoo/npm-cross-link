@@ -109,13 +109,36 @@ Required. Meta data of each maintained package. Example form:
 
 Supported package meta properties:
 
-##### `repoUrl` (required)
+##### `repoUrl` (required for packages maintained in its dedicated repositories)
 
 URL to git repository
 
-##### `path`
+##### `multiPackageRepoName` (required for packages maintained in multi package repositories)
 
-If for some reason we plan to keep package folder at custom location (not at `${packagesPath}/${package.name}`), then via this option we can specify desired location
+Name of mutli package repository, that this package is part of.
+
+##### `path` (required ffor packages maintained in multi package repositories)
+
+If used together with `multiRepoName`, then relative path in context of this repository.
+
+Otherwise, can be set to customize package location (when relying on default `${packagesPath}/${package.name}` is not intended for some reason)
+
+#### `multiPackageReposMeta`
+
+Meta data of eventual multi package repositories referenced in `packagesMeta`.
+
+Both `repoUrl` and `path` are mandatory
+
+```json
+{
+  "multiPackageReposMeta": {
+    "multiRepoName": {
+      "repoUrl": "git@github.com:medikoo/multi-repo.git",
+      "path": "/Users/foo/multi-repos/multi-repoName"
+    }
+  }
+}
+```
 
 #### `hooks`
 
