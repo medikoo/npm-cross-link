@@ -113,6 +113,10 @@ Supported package meta properties:
 
 URL to git repository
 
+##### `branch`
+
+If package is maintaned not at `master` branch, provide branch name
+
 ##### `multiPackageRepoName` (required for packages maintained in multi package repositories)
 
 Name of mutli package repository, that this package is part of.
@@ -139,6 +143,8 @@ Both `repoUrl` and `path` are mandatory
   }
 }
 ```
+
+Additionally `branch` can be set, if it's not `master` branch that should be treated as default
 
 #### `hooks`
 
