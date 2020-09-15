@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [10.0.0](https://github.com/medikoo/npm-cross-link/compare/v9.0.4...v10.0.0) (2020-09-15)
+
+### ⚠ BREAKING CHANGES
+
+- `lib/setup-repository` was removed (moved to be internally private). External packages should no longer rely on that
+
+### Features
+
+- Allow to customize path of maintained package ([77ec091](https://github.com/medikoo/npm-cross-link/commit/77ec091ab48b22a3c5dd5088007d13e4227e9ce5)), closes [#14](https://github.com/medikoo/npm-cross-link/issues/14)
+- Support `branch` in repository configuration ([58a6f23](https://github.com/medikoo/npm-cross-link/commit/58a6f237f4175b7a3559c0beba439942bea23bc9))
+- Support multi package repositories ([25f2912](https://github.com/medikoo/npm-cross-link/commit/25f2912954146c55ce7a302d65562bfe5cd0c701))
+
+* Make `setupRepository` private ([3a590c8](https://github.com/medikoo/npm-cross-link/commit/3a590c88f58ed36194f01977977a40b1ff6d7442))
+
 ### [9.0.4](https://github.com/medikoo/npm-cross-link/compare/v9.0.3...v9.0.4) (2020-07-15)
 
 ### Bug Fixes
