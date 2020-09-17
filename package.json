@@ -34,7 +34,7 @@
 		"eslint-config-medikoo": "^3.1.0",
 		"git-list-updated": "^1.2.1",
 		"husky": "^4.3.0",
-		"lint-staged": "^10.3.0",
+		"lint-staged": "^10.4.0",
 		"prettier-elastic": "^1.19.1"
 	},
 	"husky": {
