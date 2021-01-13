@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [10.1.0](https://github.com/medikoo/npm-cross-link/compare/v10.0.2...v10.1.0) (2021-01-13)
+
+### Features
+
+- Adapt to new npm@7 linking behavior ([4c6fb99](https://github.com/medikoo/npm-cross-link/commit/4c6fb9988fea3c7832d0cf36bff8d56728b3ba1b))
+
+_Still npm v7 support remains incomplete, due to how it interfers with whole `node_modules` state on single dependency linking_
+
 ### [10.0.2](https://github.com/medikoo/npm-cross-link/compare/v10.0.1...v10.0.2) (2020-09-17)
 
 ### Bug Fixes
