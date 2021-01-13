@@ -96,5 +96,8 @@
 		"prettify": "prettier --write --ignore-path .gitignore '**/*.{css,html,js,json,md,yaml,yml}'",
 		"prettify:updated": "pipe-git-updated --ext=css --ext=html --ext=js --ext=json --ext=md --ext=yaml --ext=yml -- prettier --write"
 	},
+	"engines": {
+		"node": ">=10.0"
+	},
 	"license": "ISC"
 }
