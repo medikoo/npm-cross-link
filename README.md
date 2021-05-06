@@ -1,6 +1,8 @@
 ![Transpilation status][transpilation-image]
 [![npm version][npm-image]][npm-url]
 
+_Note: Due to quirky way of how `npm link <package>` works in npm v7 (it manipulates also other not related dependencies in `node_modules`). this package at this point doesn't work well with npm v7. This issue will be addressed with next major release_
+
 # npm-cross-link
 
 ## Automate `npm link` across maintained packages and projects
