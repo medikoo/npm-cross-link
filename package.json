@@ -8,7 +8,7 @@
 	},
 	"repository": "medikoo/npm-cross-link",
 	"dependencies": {
-		"child-process-ext": "^2.1.1",
+		"child-process-ext": "^3.0.1",
 		"cli-color": "^2.0.3",
 		"cli-progress-footer": "^2.3.2",
 		"cli-sprintf-format": "^1.1.1",
