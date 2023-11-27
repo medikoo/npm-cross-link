@@ -74,7 +74,7 @@ if (argv.version) {
 	return;
 }
 
-require("../lib/private/cli")("install", packageNames, {
+require("../lib/cli")("install", packageNames, {
 	bumpDeps: argv["bump-deps"],
 	global: argv.global,
 	pull: argv.pull,

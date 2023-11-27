@@ -35,7 +35,4 @@ if (argv.v || argv.version) {
 	return;
 }
 
-require("../lib/private/cli")("update-all", null, {
-	pull: argv.pull !== false,
-	push: argv.push !== false
-});
+require("../lib/cli")("update-all", null, { pull: argv.pull !== false, push: argv.push !== false });
