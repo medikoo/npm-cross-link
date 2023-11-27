@@ -51,14 +51,8 @@
 		]
 	},
 	"eslintConfig": {
-		"extends": "medikoo",
+		"extends": "medikoo/node",
 		"root": true,
-		"env": {
-			"node": true
-		},
-		"parserOptions": {
-			"ecmaVersion": 2018
-		},
 		"overrides": [
 			{
 				"files": [
