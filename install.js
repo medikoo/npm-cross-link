@@ -4,9 +4,9 @@ const toPlainObject         = require("es5-ext/object/normalize-options")
     , ensureString          = require("es5-ext/object/validate-stringifiable-value")
     , { resolve, basename } = require("path")
     , NpmCrossLinkError     = require("./lib/npm-cross-link-error")
-    , ensureConfiguration   = require("./lib/private/ensure-user-configuration")
-    , createProgressData    = require("./lib/private/create-progress-data")
-    , install               = require("./lib/private/install")
+    , ensureConfiguration   = require("./lib/ensure-user-configuration")
+    , createProgressData    = require("./lib/create-progress-data")
+    , install               = require("./lib/install")
     , getPackageJson        = require("./lib/get-package-json");
 
 module.exports = (path, userConfiguration, inputOptions = {}) => {

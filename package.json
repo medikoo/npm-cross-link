@@ -56,11 +56,11 @@
 		"overrides": [
 			{
 				"files": [
-					"lib/private/install-dependencies/index.js",
-					"lib/private/install-maintained-package/finalize.js",
-					"lib/private/setup-dependencies/index.js",
-					"lib/private/setup-dependencies/setup-required-dependencies.js",
-					"lib/private/update-all.js"
+					"lib/install-dependencies/index.js",
+					"lib/install-maintained-package/finalize.js",
+					"lib/setup-dependencies/index.js",
+					"lib/setup-dependencies/setup-required-dependencies.js",
+					"lib/update-all.js"
 				],
 				"rules": {
 					"no-await-in-loop": "off"

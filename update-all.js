@@ -1,9 +1,9 @@
 "use strict";
 
 const toPlainObject       = require("es5-ext/object/normalize-options")
-    , ensureConfiguration = require("./lib/private/ensure-user-configuration")
-    , createProgressData  = require("./lib/private/create-progress-data")
-    , updateAll           = require("./lib/private/update-all");
+    , ensureConfiguration = require("./lib/ensure-user-configuration")
+    , createProgressData  = require("./lib/create-progress-data")
+    , updateAll           = require("./lib/update-all");
 
 module.exports = (configuration, options = {}) => {
 	const progressData = createProgressData();
