@@ -1,4 +1,4 @@
-![Transpilation status][transpilation-image]
+[![Build status][build-image]][build-url]
 [![npm version][npm-image]][npm-url]
 
 _Note: Due to quirky way of how `npm link <package>` works in npm v7 (it manipulates also other not related dependencies in `node_modules`). this package at this point doesn't work well with npm v7. This issue will be addressed with next major release_
@@ -175,3 +175,8 @@ Installer by default removes all dependencies not referenced in package `package
 #### `toBeCopiedDependencies`
 
 Optional. Eventual list of non maintained dependencies that in all cases should be copied into `node_modules` and not linked to global installation.
+
+[build-image]: https://github.com/medikoo/npm-cross-link/workflows/Integrate/badge.svg
+[build-url]: https://github.com/medikoo/npm-cross-link/actions?query=workflow%3AIntegrate
+[npm-image]: https://img.shields.io/npm/v/npm-cross-link.svg
+[npm-url]: https://www.npmjs.com/package/npm-cross-link
