@@ -1,28 +1,18 @@
 "use strict";
 
-const toPlainObject       = require("es5-ext/object/normalize-options")
-    , ensureObject        = require("es5-ext/object/valid-object")
-    , ensureString        = require("es5-ext/object/validate-stringifiable-value")
-    , { resolve }         = require("path")
-    , ensurePackageName   = require("./lib/ensure-package-name")
-    , NpmCrossLinkError   = require("./lib/npm-cross-link-error")
-    , ensureConfiguration = require("./lib/ensure-user-configuration")
-    , createProgressData  = require("./lib/create-progress-data")
-    , installDependencies = require("./lib/install-dependencies")
-    , getPackageJson      = require("./lib/get-package-json");
+const toPlainObject        = require("es5-ext/object/normalize-options")
+    , ensureString         = require("es5-ext/object/validate-stringifiable-value")
+    , { resolve }          = require("path")
+    , NpmCrossLinkError    = require("./lib/npm-cross-link-error")
+    , ensureConfiguration  = require("./lib/ensure-user-configuration")
+    , createProgressData   = require("./lib/create-progress-data")
+    , installDependencies  = require("./lib/install-dependencies")
+    , getPackageJson       = require("./lib/get-package-json")
+    , tokenizePackageSpecs = require("./lib/utils/tokenize-package-specs");
 
 module.exports = (path, dependencyNames, userConfiguration, inputOptions = {}) => {
 	path = resolve(ensureString(path));
-	const dependenciesData = Array.from(ensureObject(dependencyNames), dependencyName => {
-		dependencyName = ensureString(dependencyName);
-		if (dependencyName.slice(1).includes("@")) {
-			return {
-				name: ensurePackageName(dependencyName.slice(0, dependencyName.lastIndexOf("@"))),
-				versionRange: dependencyName.slice(dependencyName.lastIndexOf("@") + 1)
-			};
-		}
-		return { name: ensurePackageName(dependencyName) };
-	});
+	const dependenciesData = tokenizePackageSpecs(dependencyNames);
 	const progressData = createProgressData();
 	const dependentContext = { path };
 	dependentContext.packageJson = getPackageJson(path);
