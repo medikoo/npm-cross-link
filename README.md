@@ -109,7 +109,7 @@ URL to git repository
 
 ##### `branch`
 
-If package is maintaned not at `master` branch, provide branch name
+If package is maintaned not at `main` branch, provide branch name
 
 ##### `multiPackageRepoName` (required for packages maintained in multi package repositories)
 
