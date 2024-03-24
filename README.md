@@ -1,8 +1,6 @@
 [![Build status][build-image]][build-url]
 [![npm version][npm-image]][npm-url]
 
-_Note: Due to quirky way of how `npm link <package>` works in npm v7 (it manipulates also other not related dependencies in `node_modules`). this package at this point doesn't work well with npm v7. This issue will be addressed with next major release_
-
 # npm-cross-link
 
 ## Automate `npm link` across maintained packages and projects
@@ -13,12 +11,14 @@ npm install -g npm-cross-link
 
 ### Use case
 
-You maintain many npm packages and prefer to cross install them via `npm link`, handling such setup manually can be time taking and error-prone.
+You maintain many distinct npm packages and prefer to cross link them across each other, handling such setup manually can be time taking and error-prone.
 
-`npm-cross-link` is the npm installer that ensures all latest versions of dependencies are linked to global folder
-and non latest are installed on spot (but with its deep dependencies located in its own `node_modules`)
+`npm-cross-link` is packages installer which installs dependencies into `node_modules` the following way:
 
-For maintained packages, it ensures its local installation is linked into global folder
+- Dependencies which expect to rely on some peer dependencies, are placed directly in `node_modules`
+- All other dependencies are linked:
+  - Maintained dependencies referenced by _latest_ versions are linked to its corresponding repository folders
+  - All others are installed once in dedicated cache folder, and are linked into that folder
 
 ### How it works?
 
@@ -29,10 +29,8 @@ When running `npm-cross-link -g <package-name>` for maintained package, or when 
 1. If package repository is not setup, it is cloned into corresponding folder (`~/npm-packages/<package-name>` by default). Otherwise optionally new changes from remote can be pulled (`--pull`) and committed changes pushed (`--push`)
 2. All maintained project dependencies (also `devDependencies` and eventual `optionalDependencies`) are installed/updated according to same flow.
 
-   - Not maintained dependencies (not found in `packagesMeta`) if at latest version are ensured to be installed globally and npm linked to global npm folder. Otherwise they're installed on spot but with its dependencies contained in dependency folder (not top level node_modules).
-   - Maintained project dependencies (those found in `packagesMeta`) if referenced version matches local, are simply cross linked, otherwise they're istalled on spot (with its dependencies contained in dependency folder, not top level node_modules).
-
-3. Package is ensured to be linked to global npm folder
+   - Not maintained dependencies (not found in `packagesMeta`) are ensured to be installed in cache and linked (unless they depend on some peer dependencies, then they're copied directly into `node_modules`)
+   - Maintained project dependencies (those found in `packagesMeta`) if referenced version matches local, are simply cross linked, otherwise they're linked from cache folder
 
 All important events and findings are communicated via logs (level of output can be fine tuned via [LOG_LEVEL](https://github.com/medikoo/log/#log_level) env setting).
 
@@ -40,17 +38,11 @@ As each dependency is installed individually (and maintained packages are being 
 
 #### npm resolution
 
-When relying on npm, it relies on version as accessible via command line.
-
-If you rely on global Node.js installation, then Node.js update doesn't change location of global npm folder, so updates to Node.js are free from side effects when package links are concerned.
-
-However when relying on [nvm](https://github.com/creationix/nvm), different npm is used with every different Node.js version, which means each Node.js/npm version points to other npm global folder. That's not harmful per se, but on reinstallation all links would be updated to reflect new path.
-
-To avoid confusion it's better to rely on global installation. Still [nvm](https://github.com/creationix/nvm) is great for checking this project out (as then globally installed packages are not affected).
+Internally `npm-cross-link` relies on `npm` being accesible to prepare cached versions of installed packages.
 
 #### Limitations
 
-All subdependencies of project dependencies are installed within dependencies `node_modules` folders. It means that if e.g. dependency `A` and dependency `B`, depend on same version of dependency `C`, (and they're not maintained packages, so they're either linked to global installation or installed on spot) they will use different installations of `C`.
+All subdependencies of project dependencies are installed within dependencies `node_modules` folders. It means that if e.g. dependency `A` and dependency `B`, depend on same version of dependency `C`, (and they're not maintained packages, so they're either linked to cache or installed on spot) they will use different installations of `C`.
 
 npm since early days ensured that in such scenarios `C` is installed top level (so it's shared among `A` and `B`), npm-cross-link doesn't ensure that.
 
@@ -68,7 +60,7 @@ Installs or updates given project dependencies. If dependency version is not spe
 
 #### `npm-cross-link -g [...options] ...[<@scope>/]<name>`
 
-Installs or updates given packages globally. Due to `npm-cross-link` installation rules it's only latest versions of packages that are globally linked.
+Installs or updates given packages on its own. If it's maintained package, then it's ensured in resolved maintained folder, in all other cases packages is simply ensured to be installed in cache
 
 #### `npm-cross-link-update-all [...options]`
 
@@ -78,7 +70,7 @@ Updates all are already installed maintained packages
 
 - `--pull` - Pull eventual new updates from remote
 - `--push` - For all updated packages push eventually committed changes to remote
-- `--bump-deps` - (only non global installations) Bump version ranges of dependencies in `package.json`
+- `--bump-deps` - (only non-global installations) Bump version ranges of dependencies in `package.json`
 - `--no-save` - (only for dependencies install) Do not save dependency to `package.json` (effective only if its not there yet)
 - `--dev` - (only for dependencies install) Force to store updated version in `devDependencies` section
 - `--optional` - (only for dependencies install) Force to store updated version in `optionalDependencies` section
@@ -174,7 +166,7 @@ Installer by default removes all dependencies not referenced in package `package
 
 #### `toBeCopiedDependencies`
 
-Optional. Eventual list of non maintained dependencies that in all cases should be copied into `node_modules` and not linked to global installation.
+Optional. Eventual list of non maintained dependencies that in all cases should be copied into `node_modules` and not linked to cache
 
 [build-image]: https://github.com/medikoo/npm-cross-link/workflows/Integrate/badge.svg
 [build-url]: https://github.com/medikoo/npm-cross-link/actions?query=workflow%3AIntegrate
