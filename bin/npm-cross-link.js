@@ -11,10 +11,10 @@ const meta = require("../package");
 
 const argv = require("minimist")(process.argv.slice(2), {
 	boolean: [
-		"bump-deps", "global", "help", "pull", "push", "save", "dev", "optional", "prod", "version"
+		"bump-deps", "global", "help", "pull", "push", "save", "dev", "optional", "prod", "version",
 	],
 	alias: { global: "g", help: "h", version: "v" },
-	default: { save: true }
+	default: { save: true },
 });
 
 const packageNames = argv._;
@@ -85,5 +85,5 @@ require("../lib/cli")("install", packageNames, {
 		if (argv.optional) return "optional";
 		if (argv.prod) return "prod";
 		return "as-is-or-prod";
-	})()
+	})(),
 });
