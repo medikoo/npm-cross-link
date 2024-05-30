@@ -2,6 +2,35 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [11.0.0](https://github.com/medikoo/npm-cross-link/compare/v10.1.0...v11.0.0) (2024-05-30)
+
+### ⚠ BREAKING CHANGES
+
+- Default branch name is `main`
+- `npm-cross-link` no longer interferes with npm global `node_modules` folder. For any reuse it relies on user local cache directory.
+- No longer `npm link` is used internally. Any links are configured directly via symlinking
+
+### Features
+
+- Improve program error reporting ([dc2f43e](https://github.com/medikoo/npm-cross-link/commit/dc2f43e3967cb929e61a7f1a83d7323927b84938))
+- Rely on local cache instead of npm global dependencies folder ([d031c56](https://github.com/medikoo/npm-cross-link/commit/d031c5667881d5d7207c24814b81e8c1f6ec929d))
+- Switch default branch name from `master` to `main` ([0321878](https://github.com/medikoo/npm-cross-link/commit/0321878df5fab121511a321a109b532613f7d766))
+- Ensure to not run `prepare` scripts on install preparation ([7344bad](https://github.com/medikoo/npm-cross-link/commit/7344bad9eb07d1ebc1b873d4f1f832c0f2f76cde))
+
+### Maintenance Improvements
+
+- Cache package logic is not dependency install specific ([6d0d102](https://github.com/medikoo/npm-cross-link/commit/6d0d10291b47d4be766c467502b37fff2a3b0ff2))
+- Convert to conceptually private context ([2c08940](https://github.com/medikoo/npm-cross-link/commit/2c089404383490fa05717820212e94d5f6342e37))
+- Exclude `isSemVerRange` utility ([0e869a6](https://github.com/medikoo/npm-cross-link/commit/0e869a6605e4842b23de40b97d4721eb5be462f9))
+- Exclude package specs tokenization ([c4704e8](https://github.com/medikoo/npm-cross-link/commit/c4704e8614b44abaac0306fb0ba17c1d5c6b1deb))
+- Generalize `resolveLogLevel` ([071a8ae](https://github.com/medikoo/npm-cross-link/commit/071a8ae1fa70fd68dec3f20fdf1bdd51c301c2f0))
+- Local context resolution no longer dependency install specific ([259386a](https://github.com/medikoo/npm-cross-link/commit/259386afa9f99546bff3a4e964fff1c1d39ac41a))
+- Move `lib/private/cli` to `lib/cli` ([4baa7a9](https://github.com/medikoo/npm-cross-link/commit/4baa7a947fbf2ddd28df1dcb1e377d082b2ed4b4))
+- Move `resolvePackageBinariesDict` to main context ([ad66884](https://github.com/medikoo/npm-cross-link/commit/ad668843810cb8b8c3d546c071a2aa83c9bcf1e4))
+- Replace `got` with `node-fetch` ([a395d0f](https://github.com/medikoo/npm-cross-link/commit/a395d0fddd5c3267181ff9162bf5d6748f8193fc))
+- Upgrade `tar` to v7 ([6c4e04e](https://github.com/medikoo/npm-cross-link/commit/6c4e04ee435b768ff5b83c675c985bd4dd651484))
+- Use regex named groups ([c49f398](https://github.com/medikoo/npm-cross-link/commit/c49f398c8cfa6d754d63c1a930a42281ff5cdb55))
+
 ## [10.1.0](https://github.com/medikoo/npm-cross-link/compare/v10.0.2...v10.1.0) (2021-01-13)
 
 ### Features
