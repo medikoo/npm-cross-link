@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [11.0.3](https://github.com/medikoo/npm-cross-link/compare/v11.0.2...v11.0.3) (2024-07-19)
+
+### Bug Fixes
+
+- Fix handling of not found package names ([15e76df](https://github.com/medikoo/npm-cross-link/commit/15e76df04f91ef204809d10df1d932884efced37))
+
+### Maintenance Improvements
+
+- Improve clarity of warning log ([78dc3c2](https://github.com/medikoo/npm-cross-link/commit/78dc3c27a76be8cb56eeeaddf36d7b17f497a9fa))
+
 ### [11.0.2](https://github.com/medikoo/npm-cross-link/compare/v11.0.1...v11.0.2) (2024-07-19)
 
 ### Bug Fixes
