@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [11.0.1](https://github.com/medikoo/npm-cross-link/compare/v11.0.0...v11.0.1) (2024-07-19)
+
+### Bug Fixes
+
+- Do not fail on symlink creation if `node_modules` doesn't exist ([d90dadb](https://github.com/medikoo/npm-cross-link/commit/d90dadbefbb1f50b94ca4b307d209becf37f5f54))
+
 ## [11.0.0](https://github.com/medikoo/npm-cross-link/compare/v10.1.0...v11.0.0) (2024-05-30)
 
 ### ⚠ BREAKING CHANGES
