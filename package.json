@@ -31,7 +31,7 @@
 	},
 	"devDependencies": {
 		"eslint": "^8.57.0",
-		"eslint-config-medikoo": "^4.2.0",
+		"eslint-config-medikoo": "^5.1.0",
 		"git-list-updated": "^1.2.1",
 		"husky": "^4.3.8",
 		"lint-staged": "^15.2.7",
@@ -92,7 +92,7 @@
 		"prettify:updated": "pipe-git-updated --base=main --ext=css --ext=html --ext=js --ext=json --ext=md --ext=yaml --ext=yml -- prettier --write"
 	},
 	"engines": {
-		"node": ">=10.0"
+		"node": ">=18.0"
 	},
 	"license": "ISC"
 }
