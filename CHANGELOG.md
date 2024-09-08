@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [12.0.2](https://github.com/medikoo/npm-cross-link/compare/v12.0.1...v12.0.2) (2024-09-08)
+
+### Maintenance Improvements
+
+- Ensure to pick `fs2` bug fix ([5a03df5](https://github.com/medikoo/npm-cross-link/commit/5a03df58a7a1e64f60df41979b34fd2e1540fb6f))
+
 ### [12.0.1](https://github.com/medikoo/npm-cross-link/compare/v12.0.0...v12.0.1) (2024-09-08)
 
 ### Bug Fixes
