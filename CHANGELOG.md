@@ -2,6 +2,22 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [12.0.1](https://github.com/medikoo/npm-cross-link/compare/v12.0.0...v12.0.1) (2024-09-08)
+
+### Bug Fixes
+
+- Do not print "not coherent" logs on first external linking ([47c7871](https://github.com/medikoo/npm-cross-link/commit/47c78717ae1a8ec3b363db45a7c28833c6482e31))
+- Ensure to link binaries on maintained install ([93aed19](https://github.com/medikoo/npm-cross-link/commit/93aed19dfbd5a2cabef1dd28f9c3d702cc522309))
+
+### Maintenance Improvements
+
+- Exclude `mapBinaries` ([fd7cbfd](https://github.com/medikoo/npm-cross-link/commit/fd7cbfd3986e11d6c7a01669c7afc516b4ce60f1))
+- Imporove require path ([a14b83f](https://github.com/medikoo/npm-cross-link/commit/a14b83fee415afb23cf0b6d6f2e961f5836475b8))
+- Make `binaryHandler` accessible for maintained installation ([e6abc3c](https://github.com/medikoo/npm-cross-link/commit/e6abc3c3c142fdbaa1d1c0692789cd89cf540e9b))
+- Put `is-coherent` in context of binary handler ([12de710](https://github.com/medikoo/npm-cross-link/commit/12de7106a0f92bbd2614c3534d3b67aa57e722ef))
+- Remove misleading comment ([122c3b1](https://github.com/medikoo/npm-cross-link/commit/122c3b19669a7bae2c9ebbe23f975d80e6baa80f))
+- Separate binaries and deps check ([257127e](https://github.com/medikoo/npm-cross-link/commit/257127e23628ce673c31b60b4e8742fa1f4ef522))
+
 ## [12.0.0](https://github.com/medikoo/npm-cross-link/compare/v11.0.3...v12.0.0) (2024-09-08)
 
 ### ⚠ BREAKING CHANGES
