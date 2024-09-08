@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [12.0.0](https://github.com/medikoo/npm-cross-link/compare/v11.0.3...v12.0.0) (2024-09-08)
+
+### ⚠ BREAKING CHANGES
+
+- Node.js versions below v18 are no longer supported
+
+### Maintenance Improvements
+
+- Drop support for Node.js versions below v18 ([1442e75](https://github.com/medikoo/npm-cross-link/commit/1442e755b99e32e0b2b36ff1a2e0ee00f1bbe66c))
+
 ### [11.0.3](https://github.com/medikoo/npm-cross-link/compare/v11.0.2...v11.0.3) (2024-07-19)
 
 ### Bug Fixes
