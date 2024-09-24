@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [12.0.3](https://github.com/medikoo/npm-cross-link/compare/v12.0.2...v12.0.3) (2024-09-24)
+
+### Bug Fixes
+
+- Ensure to expose eventual `stdin` requests ([f3a73fa](https://github.com/medikoo/npm-cross-link/commit/f3a73fa65b93571590d123068ca210e262001d9e))
+- Properly handle invalid cache folder ([4460948](https://github.com/medikoo/npm-cross-link/commit/4460948c63b51a75f77183c4e4bd9a117f629d08))
+
+### Maintenance Improvements
+
+- Bump packages ([208af20](https://github.com/medikoo/npm-cross-link/commit/208af204405b0f0e913b8a6945ceff6112faa6e1))
+
 ### [12.0.2](https://github.com/medikoo/npm-cross-link/compare/v12.0.1...v12.0.2) (2024-09-08)
 
 ### Maintenance Improvements
